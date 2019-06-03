@@ -57,7 +57,7 @@ Next up, let's look at writing components in Ember -- by rewriting the "Greeting
 yarn ember g component greeting
 ```
 This creates 3 files as shown in this screenshot of the terminal output:
-![the output from running yarn ember g component greeting](/images/posts/2019-06-01-hot-loading/generate-component.png)
+![the output from running yarn ember g component greeting](/images/post-2019-06-generate-greeting-component.png)
 
 While the generate component command gives you 3 files, you don't _need_ each of them. The generate command gives you those files so that, for most components, you have the availability to quickly open and edit, without having to create the files yourselves and implement the boilerplate.
 
