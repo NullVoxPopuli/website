@@ -63,7 +63,7 @@ While the generate component command gives you 3 files, you don't _need_ each of
 
 
 in `app/templates/components/greeting.hbs`, we'll type out a little template that says Hello to whatever name we pass in. We can either ignore the greeting.js and greeting-test.js files for now.
-```hbs
+```handlebars
 <div class='greeting'>
   Hello, {{@name}}!
 </div>
@@ -72,7 +72,7 @@ in `app/templates/components/greeting.hbs`, we'll type out a little template tha
 
 Inside of `app/templates/application.hbs`, the entrypoint to rendering our application, we need to render our `Greeting` component.
 
-```hbs
+```handlebars
 <Greeting @name="Preston" />
 
 {{outlet}}
@@ -101,7 +101,7 @@ To see the speed that hot module replacement gives you, let's modify the greetin
 
 
 in `app/templates/components/greeting.hbs`:
-```hbs
+```handlebars
 <div class='greeting'>
   <h1>Hello, {{@name}}!</h1>
 </div>
