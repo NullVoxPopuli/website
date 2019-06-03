@@ -1,9 +1,9 @@
 ---
-title: 2019 06 01 React Response Hot Loading
+title: React Response Hot Loading
 image: /images/timothy-meinberg-206976-unsplash.jpg
 imageMeta:
   attribution:
-  attributionLink:
+  attributionLink: https://unsplash.com/photos/xqV9QdGOSas
 featured: true
 authors:
   - nullvoxpopuli
@@ -21,6 +21,98 @@ My hope for this series is only two things:
  - Improve the perception of Ember with respect to modern features and behavior
  - Show how conventions and Plugin Architecture can make everyone's lives easier.
 
-In response to: https://thoughtbot.com/blog/setting-up-webpack-for-react-and-hot-module-replacement
+In response to [Setting Up Webpack for React and Hot Module Replacement](https://thoughtbot.com/blog/setting-up-webpack-for-react-and-hot-module-replacement) (by thoughtbot), as proposed by [@j_mcnally](https://twitter.com/j_mcnally/status/1134844414256386048), I'll be going through the article in chunks as there are correlations with how all of what is explained could be done in an ember project.
+The article is broken out into a few short sections:
 
-Addon: https://github.com/lifeart/ember-ast-hot-load
+1. Initializing a project
+
+2. Setting up webpack
+
+    a. Basic configuration
+
+    b. Adding loaders
+
+ 3. Writing React components
+
+    a. Adding an index page
+
+ 4. Setting up the webpack dev server
+
+    a. Hot module replacement
+
+It's a short article, and the first half is setting up the project -- so, if you have a terminal shell ready and all setup for javascript development, feel free to run the following command to instantiate your project, and we can skip parts `1`, `2`, `2a`, `2b`, `3a` and `4` (we'll get to `4a shortly`).
+
+Note: if all you care about is how to do Hot module replacement, feel free to [skip ahead](#hmr)
+
+```bash
+npx ember-cli new hmr-demo -b @ember/octane-app-blueprint
+```
+
+Depending on your familiarity with ember, this may seem like it _isn't enough_ to set up a project. Well, my friends, with the power of conventions and agreed upon tooling, the above command bundles all the above setup steps so that you don't need to care about them when making apps.  Sure, if you enjoy tweaking webpack configs to try to squeeze out more loading performance or reduce bundle size in a variety of ways, that's fine -- but for _being productive in feature development_, it's not something that needs to be repeated for every project -- even in the React world, and especially at my previous company [DeveloperTown](http://developertown.com/) (a consultancy), configuration files were copied and pasted between projects.
+
+Next up, let's look at writing components in Ember -- by rewriting the "Greeting" component from the thoughtbot article.
+
+```bash
+yarn ember g component greeting
+```
+![the output from running yarn ember g component greeting](/images/posts/2019-06-01-hot-loading/generate-component.png)
+
+
+```js
+
+```
+
+in `app/templates/components/greeting.hbs`:
+```hbs
+<div class='greeting'>
+  Hello, {{@name}}!
+</div>
+```
+
+Inside of `app/templates/application.hbs`, we need to render our `Greeting` component.
+
+```hbs
++<Greeting @name="Preston" />
+
+{{outlet}}
+```
+
+```diff
+-{{!-- The following component displays Ember's default welcome message. --}}
+-<WelcomePage />
+-{{!-- Feel free to remove this! --}}
++<Greeting @name="Preston" />
+
+{{outlet}}
+```
+
+
+<span id='hmr' />
+## Hot module replacement
+
+There is a package called [ember-ast-hot-load](https://github.com/lifeart/ember-ast-hot-load) which will do all of the hot module replacement for us. To install the package, we can run:
+
+```bash
+yarn ember install ember-ast-hot-load
+```
+
+Now we'll want to start our development server with
+
+```bash
+yarn start
+```
+
+
+To see the speed that hot module replacement gives you, let's modify the greeting component by wrapping the text in an `h1` tag.
+
+
+in `app/templates/components/greeting.hbs`:
+```hbs
+<div class='greeting'>
+  <h1>Hello, {{@name}}!</h1>
+</div>
+```
+
+When you save the file you'll see the page update automatically without a page reload. If you don't believe it, feel free to remove the ember-ast-hot-load package from package.json and restart the dev server.
+
+
