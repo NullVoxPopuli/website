@@ -19,7 +19,8 @@ Partially due to the fact that I find coming up with things to write about somew
 
 My hope for this series is only two things:
  - Improve the perception of Ember with respect to modern features and behavior
- - Show how conventions and Plugin Architecture can make everyone's lives easier.
+ - Show how conventions Architectural patterns can make everyone's lives easier.
+
 
 In response to [Setting Up Webpack for React and Hot Module Replacement](https://thoughtbot.com/blog/setting-up-webpack-for-react-and-hot-module-replacement) (by thoughtbot), as proposed by [@j_mcnally](https://twitter.com/j_mcnally/status/1134844414256386048), I'll be going through the article in chunks as there are correlations with how all of what is explained could be done in an ember project.
 The article is broken out into a few short sections:
@@ -68,10 +69,11 @@ in `app/templates/components/greeting.hbs`, we'll type out a little template tha
 </div>
 ```
 
+
 Inside of `app/templates/application.hbs`, the entrypoint to rendering our application, we need to render our `Greeting` component.
 
 ```hbs
-+<Greeting @name="Preston" />
+<Greeting @name="Preston" />
 
 {{outlet}}
 ```
@@ -80,7 +82,9 @@ Inside of `app/templates/application.hbs`, the entrypoint to rendering our appli
 <span id='hmr' />
 ## Hot module replacement
 
-There is a package called [ember-ast-hot-load](https://github.com/lifeart/ember-ast-hot-load) which will do all of the hot module replacement for us. To install the package, we can run:
+There is a package called [ember-ast-hot-load](https://github.com/lifeart/ember-ast-hot-load) which will do all of the hot module replacement for us. This enables us to maintain the greater application state while we work on individual components. We don't need to wait for the entire app to rebuild, or the page to refresh. This greatly benefits our development feedback loop by reducing wait time.
+
+To install the package, we can run:
 
 ```bash
 yarn ember install ember-ast-hot-load
@@ -106,3 +110,20 @@ in `app/templates/components/greeting.hbs`:
 When you save the file you'll see the page update automatically without a page reload. If you don't believe it, feel free to remove the ember-ast-hot-load package from package.json and restart the dev server.
 
 
+That's it!
+
+<hr />
+
+tl;dr:
+
+```bash
+yarn ember install ember-ast-hot-load
+```
+
+done.
+
+## Want More Information?
+ - [Getting started (general)](https://guides.emberjs.com/release/getting-started/quick-start/)
+ - [Templates in Ember](https://guides.emberjs.com/release/templates/handlebars-basics/)
+ - [Components](https://guides.emberjs.com/release/components/defining-a-component/)
+ - [Addons and Dependencies](https://guides.emberjs.com/release/addons-and-dependencies/managing-dependencies/)
