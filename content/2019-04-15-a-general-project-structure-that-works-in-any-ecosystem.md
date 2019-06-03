@@ -5,7 +5,7 @@ imageMeta:
   attribution:
   attributionLink:
 featured: true
-authors: 
+authors:
   - nullvoxpopuli
 date: Mon Apr 15 2019 06:44:47 GMT-0400 (Eastern Daylight Time)
 tags:
@@ -16,9 +16,9 @@ tags:
   - react
   - angular
   - vue
-  - project structure
+  - project-structure
   - files
-  - file system
+  - file-system
 ---
 
 
@@ -28,7 +28,7 @@ To quote another article on a similar topic:
 
 > --- [_The 100% correct way to structure a React app..._](https://hackernoon.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed)
 
-Why worry about folder/file structure at all? It seems like a difficult problem to solve. When there are no restrictions, almost everyone has a different idea of how 'things' should be named, and where they should live. In order to get everyone on the same page to achieve maximum project consistency, a structure should be agreed upon beforehand. 
+Why worry about folder/file structure at all? It seems like a difficult problem to solve. When there are no restrictions, almost everyone has a different idea of how 'things' should be named, and where they should live. In order to get everyone on the same page to achieve maximum project consistency, a structure should be agreed upon beforehand.
 
 
 [There](https://reactjs.org/docs/faq-structure.html) [are](https://daveceddia.com/react-project-structure/) [many](https://levelup.gitconnected.com/structure-your-react-redux-project-for-scalability-and-maintainability-618ad82e32b7) [topics](https://survivejs.com/react/advanced-techniques/structuring-react-projects/) [on](https://hackernoon.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed) [file](https://blog.bitsrc.io/structuring-a-react-project-a-definitive-guide-ac9a754df5eb) [structure](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1). [None](https://medium.com/ottofellercom/how-to-structure-large-react-apps-440b0e012d80) [of](https://redux.js.org/faq/codestructure) [them](https://labs.mlssoccer.com/a-javascript-project-structure-i-can-finally-live-with-52b778041b72) [agree](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#folders-by-feature-structure). [Some](https://gist.github.com/tracker1/59f2c13044315f88bee9) [may](https://www.oreilly.com/library/view/maintainable-javascript/9781449328092/ch13.html) [have](https://wecodetheweb.com/2015/05/28/how-to-structure-your-front-end-application/) [some](https://itnext.io/how-to-structure-a-vue-js-project-29e4ddc1aeeb) [similar](https://kamranahmed.info/blog/2014/08/07/how-to-structure-your-javascript/) [concepts](https://css-tricks.com/how-do-you-structure-javascript-the-module-pattern-edition/). [Some](https://lostechies.com/derickbailey/2012/02/02/javascript-file-folder-structures-just-pick-one/) [may](http://cassandrawilcox.me/setting-up-a-node-js-project-with-npm/) [be](https://neutrinojs.org/project-layout.html) [too](https://guide.meteor.com/structure.html) [relaxed](https://www.sitepoint.com/anatomy-of-a-modern-javascript-application/) [to](https://vuejs-templates.github.io/webpack/structure.html) [be](https://www.sohamkamani.com/blog/2015/08/21/frontend/) [worth](https://scotch.io/tutorials/angularjs-best-practices-directory-structure)[while](http://read.humanjavascript.com/ch04-organizing-your-code.html). [Ultimately](https://engineering.opsgenie.com/how-to-organize-react-files-before-its-messed-up-c85387f691be), [when](https://www.bignerdranch.com/blog/javascript-project-configuration/) [faced](https://en.bem.info/methodology/filestructure/) [with](https://www.toptal.com/meteor/improving-project-structure-meteor-framework) [the](https://www.reddit.com/r/reactjs/comments/8ogngn/what_is_the_most_efficient_folder_structure_for_a/) [choice](https://github.com/aurelia/framework/blob/master/doc/article/drafts/Aurelia%20Project%20Structure.md) [of](https://tech.offgrid-electric.com/domain-directory-structure-for-react-apps-why-its-worth-trying-b3855ee77a1e) [where](https://www.nylas.com/blog/structuring-a-complex-react-redux-project) [to](https://blog.usejournal.com/folder-structure-in-react-apps-c2ae8974d21f) [put](https://expertise.jetruby.com/how-to-properly-structure-your-react-applications-5609ad3f2ee6) [a](http://react-file-structure.surge.sh/) [file](https://geeks.uniplaces.com/how-to-keep-your-ember-js-project-clean-and-well-structured-fbff040274de), [everyone's](https://deaddesk.top/choosing-the-proper-redux-project-structure/) [preference](https://mdbootstrap.com/angular/angular-project-structure/) [seems](http://jamesknelson.com/cruv-react-project-structure/) [to](https://www.c-sharpcorner.com/blogs/folder-structure-of-angular-5-project) [be](https://www.academind.com/learn/vue-js/nuxt-js-tutorial-introduction/folders-files/) [a](https://medium.freecodecamp.org/feature-u-cf3277b11318) [little](https://quasar-framework.org/guide/app-directory-structure.html) [different](http://react-file-structure.surge.sh/).
@@ -105,11 +105,11 @@ src
     └── md5.js
 ```
 
-Going though the folders from top to bottom, because dev.to doesn't allow inline links without code fences... (a great feature of one of [prism.js'](https://prismjs.com/) plugins. 
+Going though the folders from top to bottom, because dev.to doesn't allow inline links without code fences... (a great feature of one of [prism.js'](https://prismjs.com/) plugins.
 
 ### `src`
 
-Most of this will focus on the `src` directory, as any other top-level folder or file tends to be more project or ecosystem specific, and may not generally translate to projects cross-ecosystem. Some examples of those folders that may not translate due to project-specific or build-configuration-specific reasons are: `app/`, `tests/`, `vendor/`, `public/`, `config/`, `translations/`, etc. 
+Most of this will focus on the `src` directory, as any other top-level folder or file tends to be more project or ecosystem specific, and may not generally translate to projects cross-ecosystem. Some examples of those folders that may not translate due to project-specific or build-configuration-specific reasons are: `app/`, `tests/`, `vendor/`, `public/`, `config/`, `translations/`, etc.
 
 ### `src/data`
 
@@ -132,7 +132,7 @@ Most single page apps are using some sort of router, and therefor the UI is enti
 
 ### `src/ui/routes/{route-name}/-components`
 
-In a [recent React project](https://github.com/sillsdev/appbuilder-portal/tree/33f2ada4c2601d6586ca89b934f83dae0d44e5b0/source/SIL.AppBuilder.Portal.Frontend/src/data), I've tried to omit the route-level private components directory, but it's lead to confusion between what is intended for the route, and what is there to support what is rendered on the route.  I had originally omitted the `-components` directory thinking that if I/my team just use the right folders, [things wouldn't be so bad](https://github.com/sillsdev/appbuilder-portal/tree/ee84202aa0717191c03a12f51c5542cfb02222c5/source/SIL.AppBuilder.Portal.Frontend/src/ui/routes/project). 
+In a [recent React project](https://github.com/sillsdev/appbuilder-portal/tree/33f2ada4c2601d6586ca89b934f83dae0d44e5b0/source/SIL.AppBuilder.Portal.Frontend/src/data), I've tried to omit the route-level private components directory, but it's lead to confusion between what is intended for the route, and what is there to support what is rendered on the route.  I had originally omitted the `-components` directory thinking that if I/my team just use the right folders, [things wouldn't be so bad](https://github.com/sillsdev/appbuilder-portal/tree/ee84202aa0717191c03a12f51c5542cfb02222c5/source/SIL.AppBuilder.Portal.Frontend/src/ui/routes/project).
 
 An example of a page where you'd want nested routes separate from your components is tabbed navigation:
 
@@ -171,7 +171,7 @@ posts/post
     └── index.jsx
 ```
 
-Here, `publishing-options` files must use `../` to access the components defined at the parent level. 
+Here, `publishing-options` files must use `../` to access the components defined at the parent level.
 
 
 
@@ -215,7 +215,7 @@ This, in part, relies on both documentation and programmatic enforcement. The st
 
 **7)** _Tests and styles should be co-located along side components._
 
-Instead of in a top-level `tests/` directory, tests can be contextually located with the thing that they are testing. This works for unit, integration, and acceptance tests. There will, of course, be exceptions to this, where you may be testing something app-wide and it has no specific context -- for those situations, I tend to just put tests in `tests/acceptance/` (if they are acceptance tests). 
+Instead of in a top-level `tests/` directory, tests can be contextually located with the thing that they are testing. This works for unit, integration, and acceptance tests. There will, of course, be exceptions to this, where you may be testing something app-wide and it has no specific context -- for those situations, I tend to just put tests in `tests/acceptance/` (if they are acceptance tests).
 
 
 **8)** _Avoid the infamous "titlebar problem", where a bunch of files all named the same can't be differentiated in the editor (though, a lot of this is editor-based)_
@@ -238,7 +238,7 @@ A more concrete / real-world example (in user-space), by having the files split 
 ## Implementation
 
 1. How do you get everyone on the same page when anything can go?
-2. How do you achieve consistency between developers? 
+2. How do you achieve consistency between developers?
 3. How do you remember where something _should_ go?
 4. How do you manage imports with all these file trees?
 
@@ -247,7 +247,7 @@ For 1 through 3, the only answer for most projects is in-depth code reviews. Aft
 
 For managing imports, the best thing to do is to set up absolute aliases to common entry points.
 
-For example: 
+For example:
 ```
     "paths": {
       "project-name/*: ["."],
@@ -269,13 +269,13 @@ An example of a React app implementing most of the criteria outline in this post
 
 However, in Ember, there is a [resolver](https://github.com/ember-cli/ember-resolver).  The resolver defines a set of rules for finding things and contextually discovering components, routes, data models, etc. There are a set of conventions that allow the resolver to find things in app-space, so that you don't need to worry about importing them. There is a reference, the resolver looks up the reference, and the thing stubbed in.
 
-Something unique about ember, is that it has a bunch of build-time optimizations that the other ecosystems don't have. This is powered by broccoli, where you can transform parts of your app file tree during the build process. Ember uses this to swap out lookups with the actual reference to a component (for example, could be other things). Broccoli is also used to swap out simple helpers such as `{{fa-icon}}` with the rendered html during build so that the bundle can be smaller. 
+Something unique about ember, is that it has a bunch of build-time optimizations that the other ecosystems don't have. This is powered by broccoli, where you can transform parts of your app file tree during the build process. Ember uses this to swap out lookups with the actual reference to a component (for example, could be other things). Broccoli is also used to swap out simple helpers such as `{{fa-icon}}` with the rendered html during build so that the bundle can be smaller.
 
 To read more about ember's resolver, feel free to checkout [DockYard's article, "Understanding Ember's resolver"](https://dockyard.com/blog/2016/09/14/understanding-ember-s-resolver)
 To read more about Broccoli, Oli Griffith has an _amazing_ [guide / tutorial on it](http://www.oligriffiths.com/broccolijs/)
 
 
-An example of this structure can be found here: 
+An example of this structure can be found here:
 [emberclear at gitlab](https://gitlab.com/NullVoxPopuli/emberclear/tree/master/packages/frontend) (this is the code for [emberclear.io](https://emberclear.io), one of my side projects).
 
 

@@ -55,32 +55,22 @@ Next up, let's look at writing components in Ember -- by rewriting the "Greeting
 ```bash
 yarn ember g component greeting
 ```
+This creates 3 files as shown in this screenshot of the terminal output:
 ![the output from running yarn ember g component greeting](/images/posts/2019-06-01-hot-loading/generate-component.png)
 
+While the generate component command gives you 3 files, you don't _need_ each of them. The generate command gives you those files so that, for most components, you have the availability to quickly open and edit, without having to create the files yourselves and implement the boilerplate.
 
-```js
 
-```
-
-in `app/templates/components/greeting.hbs`:
+in `app/templates/components/greeting.hbs`, we'll type out a little template that says Hello to whatever name we pass in. We can either ignore the greeting.js and greeting-test.js files for now.
 ```hbs
 <div class='greeting'>
   Hello, {{@name}}!
 </div>
 ```
 
-Inside of `app/templates/application.hbs`, we need to render our `Greeting` component.
+Inside of `app/templates/application.hbs`, the entrypoint to rendering our application, we need to render our `Greeting` component.
 
 ```hbs
-+<Greeting @name="Preston" />
-
-{{outlet}}
-```
-
-```diff
--{{!-- The following component displays Ember's default welcome message. --}}
--<WelcomePage />
--{{!-- Feel free to remove this! --}}
 +<Greeting @name="Preston" />
 
 {{outlet}}

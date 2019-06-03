@@ -10,7 +10,7 @@ authors:
 date: Thu Mar 21 2019 13:30:13 GMT-0400 (EDT)
 tags:
   - ember
-  - abridged tutorial
+  - abridged-tutorial
 ---
 
 The tools behind this blog were demo'd at EmberConf by [Chris Manson](https://twitter.com/real_ate) during a 5 minute lightning talk where he went from nothing to deployed in ~5 minutes.
