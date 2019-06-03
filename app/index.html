@@ -12,6 +12,16 @@
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/website.css">
 
     {{content-for "head-footer"}}
+
+<script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1/components/prism-css.min.js,npm/prismjs@1/components/prism-css-extras.min.js,npm/prismjs@1/components/prism-git.min.js,npm/prismjs@1/components/prism-handlebars.min.js,npm/prismjs@1/components/prism-javascript.min.js,npm/prismjs@1/components/prism-typescript.min.js,npm/prismjs@1/plugins/show-language/prism-show-language.min.js,npm/prismjs@1/plugins/remove-initial-line-feed/prism-remove-initial-line-feed.min.js,npm/prismjs@1/plugins/normalize-whitespace/prism-normalize-whitespace.min.js,npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1/plugins/autolinker/prism-autolinker.min.js,npm/prismjs@1/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js,npm/prismjs@1/components/prism-markdown.min.js,npm/prismjs@1/components/prism-markup-templating.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1/plugins/autolinker/prism-autolinker.min.css,npm/prismjs@1/themes/prism.min.css,npm/prismjs@1/themes/prism-tomorrow.min.css">
+
+    <style>
+      a.token.md-link {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     {{content-for "body"}}
