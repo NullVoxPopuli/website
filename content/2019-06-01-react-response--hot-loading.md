@@ -1,5 +1,5 @@
 ---
-title: React Response Hot Loading
+title: "React Response: Hot Loading"
 image: /images/timothy-meinberg-206976-unsplash.jpg
 imageMeta:
   attribution:
@@ -129,3 +129,4 @@ done.
  - [Templates in Ember](https://guides.emberjs.com/release/templates/handlebars-basics/)
  - [Components](https://guides.emberjs.com/release/components/defining-a-component/)
  - [Addons and Dependencies](https://guides.emberjs.com/release/addons-and-dependencies/managing-dependencies/)
+ - [Ember for React Developers](https://emberatlas.gitbook.io/emberatlas/learning/coming-from-another-ecosystem/ember-for-react-developers#component-patterns)
