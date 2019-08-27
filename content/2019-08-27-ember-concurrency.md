@@ -29,6 +29,8 @@ and what ways it's not needed.
 > concurrency documentation as the decorators proposal and
 > babel transform support changes / improves.
 
+As a disclaimer: this post is not comprehensive, and there are likely additional use cases for both using and _not_ using ember-concurrency.
+
 **Table Of Contents**
 
 - [Submitting a Form]
@@ -341,7 +343,142 @@ export default class AsyncButton extends Component<Args> {
 
 
 ## Websocket Connections
+
+**Before**
+```ts
+
+```
+```hbs
+
+```
+
+**After**
+```ts
+
+```
+```hbs
+
+```
+
+Notes on when not to use ember-concurrency here:
+
 ## API Service
  - possible example of when not to use ember-concurrency???
+
+**Before**
+```ts
+
+```
+```hbs
+
+```
+
+**After**
+```ts
+
+```
+```hbs
+
+```
+
 ## Text Search
+
+**Before**
+```ts
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+
+const DEBOUNCE_MS = 250;
+
+interface Args {
+  onSearch: <ResultType>(text: string) => Promise<ResultType>
+}
+
+function waitMs(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+export default class TextSearch extends Component {
+  @tracked text = '';
+
+  lastInvocation = undefined;
+
+  async search() {
+    this.lastInvocation = new Date();
+
+    await waitMs(DEBOUNCE_MS);
+
+    if (this.isDestroying || this.isDestroyed) {
+      return;
+    }
+
+    let waitEndedAt = new Date();
+
+    // did we search again while waiting?
+    let didSearchAgain = this.lastInvocation - waitEndedAt < DEBOUNCE_MS;
+
+    if (didSearchAgain) {
+      return; /* do not invoke search */
+    }
+
+    await this.args.onSearch(text);
+  }
+  search;
+}
+```
+```hbs
+<form {{on 'submit' this.search}}>
+  <Input @value={{this.text}} />
+
+  <!-- submit on press of enter key-->
+  <input type='submit' value='Search'>
+</form>
+```
+
+**After**
+```ts
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { task, timeout } from 'ember-concurrency';
+
+const DEBOUNCE_MS = 250;
+
+interface Args {
+  onSearch: <ResultType>(text: string) => Promise<ResultType>
+}
+
+export default class TextSearch extends Component {
+  @tracked text = '';
+
+  @(task(function*(){
+    yield timeout(DEBOUNCE_MS);
+
+    yield this.args.onSearch(text);
+  }).keepLatest())
+  search;
+}
+```
+```hbs
+<form {{on 'submit' (perform this.search)}}>
+  <Input @value={{this.text}} />
+
+  <!-- submit on press of enter key-->
+  <input type='submit' value='Search'>
+</form>
+```
+
 ## Multi-Field Search
+
+**Before**
+```ts
+```
+```hbs
+```
+
+**After**
+```ts
+```
+```hbs
+```
