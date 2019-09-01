@@ -14,8 +14,6 @@ tags:
 
 # Concurrency, the problems you don't know you have
 
-// TODO: add live examples
-
 In user interface develompent, there are many intermediate states that must be accounted for.
 A user may click a button that triggers something that will take a while, such as an API request.
 Maybe a websocket connection needs to be established,
@@ -33,13 +31,11 @@ As a disclaimer: this post is not comprehensive, and there are likely additional
 
 **Table Of Contents**
 
-- [Submitting a Form]
-- [Async Button]
-- [Websocket Connections]
-- [API Service]
-- Search / Debouncing
-    - [Text Search]
-    - [Multi-Field Search]
+- [Submitting a Form]()
+- Examples
+  - [Async Button]()
+  - [Text Search]()
+- [Further Reading]()
 
 ## Submitting a form
 
@@ -100,9 +96,7 @@ We've now doubled the amount of code in this example.
 
 Unfortunately, assuming we're writing tests for our code, we may accidentally discover an error during our tests.
 
-TODO: look up actual error:
-
-> Tried to set value on destroyed object
+> Called set on destroyed object
 
 To resolve this, after every `await`, we need to check to see if our component has been destroyed.
 Our action now becomes:
@@ -189,6 +183,67 @@ Notes on the new APIs introduced:
   but a `Task` that has a `perform` method.
   The `Task` encapsulates the state of the async behavior,
   and `perform` is how an instance of that behavior is created / started.
+
+## When wouldn't you use ember-concurrency?
+
+`ember-concurrency` is not a replacement for `async`/`await` behaviors. It's a supplement. The rule of thumb is: 
+
+> Use `async`/`await` when your function has no side-effects on the calling context.   
+> Use `ember-concurrency` when there are side-effects, or limiting concurrent executions of a function.
+
+Where a side-effect is:
+ - the setting of a variable in the invocation context (such as a service or component)
+ - the triggering of another task
+
+
+For example, a side-effect-free function may look like this:
+```ts
+import Component from '@glimmer/component';
+import ENV from 'app-name/config/environment';
+
+export default class MyComponent extends Component {
+  async getPosts() {
+    let response = await fetch(`${ENV.host}/api/posts`);
+    let json = await response.json();
+    let data = JSON.parse(json);
+
+    return data.posts;
+  }
+}
+
+```
+It does not set any properties on the class. If the component is destroyed while the `fetch` request is in-flight -- nothing will go wrong, as there is no `set` / assignment on a destroyed component. 
+
+If we desire to trigger `getPosts` from a user interaction, there will need to be an `ember-concurrency` task somewhere.
+
+```ts
+@action 
+async refresh() {
+  let posts = await this.getPosts();
+
+  this.posts = posts;
+}
+```
+If we were to add an action invokes `getPosts`, we would run into two problems:
+
+ 1. An error will occur "called set on destroyed object", if the component is destroyed before `refresh` finishes.
+ 2. There is no way to prevent concurrent requests.
+
+Both of these are solved with a Task
+
+```ts
+@(task(function*() {
+  let posts = yield this.getPosts();
+
+  this.posts = posts;
+}).drop()) 
+refresh;
+```
+
+It looks almost the same, except the task is cancelled when the component is destroyed, and all subsequent calls to `refresh` will be ignored, until the first running invocation finishes. But while `refresh` _must_ be a task. `getPosts` can remain a vanilla JavaScript `async`/`await` function.
+
+
+## Examples
 
 ## Async Button
 
@@ -342,45 +397,6 @@ export default class AsyncButton extends Component<Args> {
 ```
 
 
-## Websocket Connections
-
-**Before**
-```ts
-
-```
-```hbs
-
-```
-
-**After**
-```ts
-
-```
-```hbs
-
-```
-
-Notes on when not to use ember-concurrency here:
-
-## API Service
- - possible example of when not to use ember-concurrency???
-
-**Before**
-```ts
-
-```
-```hbs
-
-```
-
-**After**
-```ts
-
-```
-```hbs
-
-```
-
 ## Text Search
 
 **Before**
@@ -469,16 +485,7 @@ export default class TextSearch extends Component {
 </form>
 ```
 
-## Multi-Field Search
 
-**Before**
-```ts
-```
-```hbs
-```
+## Further Reading
 
-**After**
-```ts
-```
-```hbs
-```
+The [ember-concurrency docs](http://ember-concurrency.com/docs/tutorial) have a very thorough explanation of a single example of before and after applying ember-concurrency to a problem.
