@@ -21,7 +21,6 @@ tags:
   - file-system
 ---
 
-
 To quote another article on a similar topic:
 
 > the ideal structure is the one that allows you to move around your code with the least amount of effort.
