@@ -1,9 +1,9 @@
 ---
 title: Ember Concurrency
-image:
+image: /images/mike-enerio-2IkxeDKaZdY-unsplash.jpg
 imageMeta:
   attribution:
-  attributionLink:
+  attributionLink: https://unsplash.com/photos/2IkxeDKaZdY
 featured: true
 authors:
   - nullvoxpopuli
@@ -31,22 +31,22 @@ As a disclaimer: this post is not comprehensive, and there are likely additional
 
 **Table Of Contents**
 
-- [Submitting a Form]()
-- Examples
-  - [Async Button]()
-  - [Text Search]()
-- [Further Reading]()
+- [Submitting a Form](#submitting-a-form)
+- [Examples](#examples)
+    - [Async Button](#async-button)
+    - [Text Search](#text-search)
+- [Further Reading](#further-reading)
 
-## Submitting a form
+<h2 id='submitting-a-form'>Submitting a form</h2>
 
 Forms can be used for creating and updating data. Given that we have the following form:
 
-```hbs
+```handlebars
 <form {{on 'submit' this.onSubmit}}>
   <input type='submit' value='Save' />
 </form>
 ```
-Every time the user triggers the form's submit, `this.onSubmit` will be invoked. That sounds exactly what we want right? Well, not neccisarily. Maybe `onSubmit` is defined as:
+Every time the user triggers the form's submit, `this.onSubmit` will be invoked. That sounds exactly what we want right? Well, not necessarily. Maybe `onSubmit` is defined as:
 ```ts
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
@@ -87,7 +87,8 @@ export default class MyForm extends Component {
   }
 }
 ```
-```hbs
+
+```handlebars
 <form {{on 'submit' this.onSubmit}}>
   <input type='submit' value='Save' disabled={{this.isSubmitting}}/>
 </form>
@@ -140,7 +141,7 @@ export default class MyForm extends Component {
   onSubmit;
 }
 ```
-```hbs
+```handlebars
 <form {{on 'submit' (perform this.onSubmit)}}>
   <input type='submit' value='Save' disabled={{this.onSubmit.isRunning}}/>
 </form>
@@ -184,7 +185,7 @@ Notes on the new APIs introduced:
   The `Task` encapsulates the state of the async behavior,
   and `perform` is how an instance of that behavior is created / started.
 
-## When wouldn't you use ember-concurrency?
+<h2 id='when-not'>When wouldn't you use ember-concurrency?</h2>
 
 `ember-concurrency` is not a replacement for `async`/`await` behaviors. It's a supplement. The rule of thumb is: 
 
@@ -243,9 +244,9 @@ refresh;
 It looks almost the same, except the task is cancelled when the component is destroyed, and all subsequent calls to `refresh` will be ignored, until the first running invocation finishes. But while `refresh` _must_ be a task. `getPosts` can remain a vanilla JavaScript `async`/`await` function.
 
 
-## Examples
+<h2 id='examples'>Examples</h2>
 
-## Async Button
+<h3 id='async-button'>Async Button</h3>
 
 Async buttons, or buttons that can be aware of the rejected or resolved states of a promise,
 are a common pattern for one-click triggers of async behavior --
@@ -330,7 +331,7 @@ export default class AsyncButton extends Component<Args> {
   }
 }
 ```
-```hbs
+```handlebars
 <button
   {{on 'click' this.onClick}}
   ...attributes
@@ -378,7 +379,7 @@ export default class AsyncButton extends Component<Args> {
   promiseRunner;
 }
 ```
-```hbs
+```handlebars
 <button
   {{on 'click' (perform this.promiseRunner)}}
   ...attributes
@@ -396,8 +397,7 @@ export default class AsyncButton extends Component<Args> {
 </button>
 ```
 
-
-## Text Search
+<h3 id='text-search'>Text Search</h3>
 
 **Before**
 ```ts
@@ -444,7 +444,7 @@ export default class TextSearch extends Component {
   search;
 }
 ```
-```hbs
+```handlebars
 <form {{on 'submit' this.search}}>
   <Input @value={{this.text}} />
 
@@ -476,7 +476,7 @@ export default class TextSearch extends Component {
   search;
 }
 ```
-```hbs
+```handlebars
 <form {{on 'submit' (perform this.search)}}>
   <Input @value={{this.text}} />
 
@@ -486,6 +486,6 @@ export default class TextSearch extends Component {
 ```
 
 
-## Further Reading
+<h2 id='further-reading'>Further Reading</h2>
 
 The [ember-concurrency docs](http://ember-concurrency.com/docs/tutorial) have a very thorough explanation of a single example of before and after applying ember-concurrency to a problem.
