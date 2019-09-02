@@ -27,6 +27,12 @@ and what ways it's not needed.
 > concurrency documentation as the decorators proposal and
 > babel transform support changes / improves.
 
+Packages Versions at the time of writing:
+
+ - ember-cli-babel: 7.11.0
+ - ember-concurrency: 1.0.0
+ - ember-source: 3.14.0-canary
+
 As a disclaimer: this post is not comprehensive, and there are likely additional use cases for both using and _not_ using ember-concurrency.
 
 **Table Of Contents**
