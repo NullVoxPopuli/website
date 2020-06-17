@@ -1,7 +1,7 @@
 ---
-name: Preston Sego
+name: NullVoxPopuli
 id: nullvoxpopuli
-image: /images/github-profile-image.jpeg
+image: /images/kerrigan.webp
 cover:
 website: https://nullvoxpopuli.com
 twitter: nullvoxpopuli

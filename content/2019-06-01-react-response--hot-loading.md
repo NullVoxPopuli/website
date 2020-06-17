@@ -73,7 +73,7 @@ in `app/templates/components/greeting.hbs`, we'll type out a little template tha
 Inside of `app/templates/application.hbs`, the entrypoint to rendering our application, we need to render our `Greeting` component.
 
 ```handlebars
-<Greeting @name="Preston" />
+<Greeting @name="Kerrigan" />
 
 {{outlet}}
 ```
