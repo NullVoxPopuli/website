@@ -5,7 +5,7 @@ imageMeta:
   attribution:
   attributionLink: https://unsplash.com/photos/6BVinN0Y7Xk
 featured: true
-authors: 
+authors:
   - nullvoxpopuli
 date: Wed Jun 12 2019 07:54:58 GMT-0400 (Eastern Daylight Time)
 tags:
@@ -31,12 +31,12 @@ First, let's clarify what a render prop is for those who may not be familiar wit
 
 > The term [“render prop”](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce) refers to a technique for sharing code between React components using a prop whose value is a function.
 
-In React, components are _just functions_™, so any prop passed to a component whos value is a function that returns JSX is considered a "render prop". 
+In React, components are _just functions_™, so any prop passed to a component whos value is a function that returns JSX is considered a "render prop".
 
-Some examples: 
+Some examples:
 
 ```tsx
-<Header 
+<Header
   {/* profileImage is the render prop */}
   profileImage={profileProps => {
     return (
@@ -64,7 +64,7 @@ export function Header({ profileImage, children }) {
 
       {children}
 
-      {profileImage && 
+      {profileImage &&
         profileImage({ className: 'header-image' })
       }
     </header>
@@ -99,7 +99,7 @@ aside from not having the profileImage render prop, these templates are the exac
 
 ### Any other render prop
 
-In Ember, we'd still use yield, but with a parameter to create named 'blocks' that the calling context can use. These yields with the `to` argument are "_Yieldable Named Blocks_"
+In Ember, we'd still use yield, but with a parameter to create named 'blocks' that the calling context can use. These yields with the `to` argument are "_Yieldable Named Blocks_" (available in Ember 3.20+)
 
 Example using `Header`, from above:
 ```handlebars
@@ -123,7 +123,7 @@ and then the calling context would look like:
 </Header>
 ```
 
-### Passing Arguments 
+### Passing Arguments
 
 For both of these examples, assume there is a UI Library which provides a bunch of component primivites for constructing the common UI pattern / "Card".
 
@@ -135,9 +135,9 @@ export function SomeComponent({ header, content, children, footer }) {
     <Card>
       {header && (
         <CardHeader>
-          {header({ 
-            Image: CardHeaderImage, 
-            Icon: CardHeaderIcon 
+          {header({
+            Image: CardHeaderImage,
+            Icon: CardHeaderIcon
           })}
       </CardHeader>
       )}
@@ -190,7 +190,7 @@ in Ember:
 <Card>
   {{#if (has-block 'header')}}
     <CardHeader>
-      {{yield 
+      {{yield
         hash=(
           image=(component 'card-header-image')
           icon=(component 'card-header-icon')
@@ -198,13 +198,13 @@ in Ember:
         to='header'
       }}
     </CardHeader>
-  {{/if}}  
-    
+  {{/if}}
+
   <CardContent>
     {{yield}}
     {{yield to='content'}}
   </CardContent>
-  
+
   {{#if (has-block 'footer')}}
     <CardFooter>
       {{yield to='footer'}}
@@ -218,7 +218,7 @@ in Ember:
 <SomeComponent>
   <:header as |headerComponents|>
     <headerComponents.image src='path/to-image.png' />
-    
+
     My Header!
   </:header>
 
@@ -230,9 +230,14 @@ in Ember:
 </SomeComponent>
 ```
 
-Aaand that's it! Nearly a direct one to one translation between React and Ember for this kind of behavior. :)
+What's cool about named blocks is that, as a component author, you are in control of the order the components are rendered.
+So in the above example where header is first and footer is second, those _could_ be flipped, but still rendered in the same locations,
+because the content is placed where the corresponding `{{yield to="name"}}` block is. I like that a lot, and it's something I always
+wanted when I was writing React components.
 
 
 ## Want More Information?
- - [The RFC for Yieldable Named Blocks](https://emberjs.github.io/rfcs/0460-yieldable-named-blocks.html)
- - [Ember for React Developers](https://emberatlas.gitbook.io/emberatlas/learning/coming-from-another-ecosystem/ember-for-react-developers#component-patterns)
+
+- [The RFC for Yieldable Named Blocks](https://emberjs.github.io/rfcs/0460-yieldable-named-blocks.html)
+- [The Ember Atlas](http://emberatlas.com)
+  - [Ember for React Developers](https://www.notion.so/Ember-For-React-Developers-556a5d343cfb4f8dab1f4d631c05c95b)
