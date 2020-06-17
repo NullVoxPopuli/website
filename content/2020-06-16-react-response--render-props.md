@@ -7,7 +7,7 @@ imageMeta:
 featured: true
 authors:
   - nullvoxpopuli
-date: Wed Jun 12 2019 07:54:58 GMT-0400 (Eastern Daylight Time)
+date: Wed Jun 16 2020 21:42:58 GMT-0400 (Eastern Daylight Time)
 tags:
   - ember
   - react
