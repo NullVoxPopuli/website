@@ -163,7 +163,7 @@ can get a negative reputation for -- a lock of _proper_ or _incomplete_ abstract
 
 > _A bad abstraction is worse than no abstraction_
 
-So, let's clean that up a bit
+So, let's clean that up a bit using a [decorator](https://babeljs.io/docs/en/babel-plugin-proposal-decorators)
 
 ```ts
 // app.js
@@ -251,6 +251,7 @@ let containerRegistry = {
 
 so then our `app.js` may look like this:
 ```ts
+let knownServices = Object.entries(containerRegistry);
 let container = {};
 
 function bootApp() {
@@ -260,23 +261,65 @@ function bootApp() {
 }
 
 function initializeServices() {
-  let detectedServices = Object.entries(containerRegistry);
+  for (let [fullName, ServiceModule] of knownServices) {
+    let name = fullName.replace('services/', '');
+    let DefaultExport = ServiceModule.default;
 
-  for (let [fullName, AppSpecificService] of detectedServices) {
-    let name = fullName.replace('service/', '');
-
-    container[name]  = new AppSpecificService(container);
+    container[name]  = new DefaultExport(container);
   }
 }
 ```
 
+So now in our documentation, we can write that whatever the file name of the service is
+will be the name of the property pointing to an instance of that service within
+the `container`.
 
 
 Now, what if we wanted our services to be lazily instantiated, so that we don't negatively
 impact the _time to interactive_ benchmark if we don't have to?
 
-```ts
+So far our `container` has been a plain old object. We can utilize a [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
 
+```ts
+let knownServices = Object.entries(containerRegistry);
+let registry = {};
+
+let container = new Proxy(registry, {
+  get: function(target, propertyName) {
+    if (target[propertyName]) {
+      return target[propertyName];
+    }
+
+    let FoundService = lookupService(propertyName);
+
+    target[propertyName] = new FoundService(container);
+
+    return target[propertyName];
+  }
+});
+
+function lookupService(serviceName) {
+  let serviceModule = Object.entries(knownServices).find((serviceInfo) => {
+    let [ servicePath, serviceModule ] = serviceInfo;
+
+    let name = servicePath.replace('services/', '');
+
+    if (serviceName === name) {
+      return serviceModule;
+    }
+  });
+
+  if (!serviceModule) {
+    throw new Error(`The Service, ${serviceName}, was not found.`);
+  }
+
+  return serviceModule.default;
+}
+
+function bootApp() {
+  // initialization now happens on-demand
+  container.bot.begin();
+}
 ```
 
 ## Disclaimers
@@ -284,4 +327,9 @@ impact the _time to interactive_ benchmark if we don't have to?
 Dependency injection can be a big topic and have a lot of features implemented.
 This demonstration has narrow scope and is not intended to be a "fully featured"
 dependency injection implementation.
+
+## References
+
+- [TC39 Decorator Proposal](https://github.com/tc39/proposal-decorators)
+- [Ember Documentation on Dependency Injection](https://guides.emberjs.com/release/applications/dependency-injection/)
 
