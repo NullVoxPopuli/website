@@ -26,21 +26,39 @@ I, too, was in that boat -- until I really dove into how it works -- it was
 then that I began to understand why dependency injection even exists, and
 how it's actually _simpler_ than _not_ having it at all.
 
-I can't speak to the Vue perspective, but professionally, I had my start
-to frontend development in React, and at the time there was really only Redux and
-MobX for state management -- but I only had the privilege of working with Redux
-and eventually React's Context Provider/Consumer pattern. There _is_ a little bit
-of overlap between React's Contexts and Ember's Services, but they differ in
-fundamental ways, and have pros and cons, which we'll cover.
-
 But first, I'm a proponent of ["show, don't tell"](https://en.wikipedia.org/wiki/Show,_don%27t_tell),
 so we'll start by implementing dependency injection from scratch in order to demystify
 and have something concrete that can be referenced.
 
+## What is Dependency Injection?
 
-_This was inspired from some conversations on Twitter as well as trying not
-to use a web framework for building an
-[Artificatial Intelligence to play a game](https://github.com/NullVoxPopuli/doctor-who-thirteen-game-ai/blob/bc09c823abe89894cf7607aaa1820c348b900c10/ai.js#L5)_
+According to [Wikipedia](https://en.wikipedia.org/wiki/Dependency_injection)
+
+> *dependency injection* is a technique in which an object receives other obects that it depends on.
+
+_That's it_.
+
+So... this is dependency injection?
+
+```js
+let foo = new Foo()
+
+let bar = new Bar(foo);
+```
+
+yes!.
+
+The big deal with dependency injection usually comes from _managing_ how an object
+receives those other objects.
+
+
+## Why use Dependency Injection?
+
+## How does Dependency Injection work in Ember?
+
+## What does Ember do behind the scenes?
+
+
 
 ## Let's write our own!
 
@@ -93,6 +111,7 @@ function initalizeServices() {
 
 bootApp();
 ```
+To see this code in action, view [this CodeSandBox](https://codesandbox.io/s/dependency-injection-1-19yqj)
 
 In a multi-file environment we don't have access to the same module scope between files,
 
@@ -130,6 +149,7 @@ export default class Bot {
 }
 
 ```
+To see this code in action, view [this CodeSandBox](https://codesandbox.io/s/dependency-injection-2-b0qws)
 
 However, as a framework or library developer, forcing users / application developers
 to remember to assign the container each time isn't very ergonomic.
@@ -170,19 +190,30 @@ So, let's clean that up a bit using a [decorator](https://babeljs.io/docs/en/bab
 // same as before
 
 // service.js
-export default class Service { /* same as before */ }
+let CONTAINER = Symbol('container');
+
+export default class Service {
+  constructor(container) {
+    // the container is now set on a symbol-property so that app-devs don't
+    // directly access the container. We want app-devs to use the abstraction,
+    // which we're aiming to be more ergonamic
+    this[CONTAINER] = container;
+  }
+}
 
 // TODO: explain that this is a decorator
 export function injectService(target, name, descriptor) {
-  descriptor.get = () => {
-    if (!this.container) {
-      throw new Error(`${target.name} does not have a container. Did it extend from Service?`);
+  return {
+    configurable: false,
+    enumerable: true,
+    get: function() {
+      if (!this[CONTAINER]) {
+        throw new Error(`${target.name} does not have a container. Did it extend from Service?`);
+      }
+
+      return this[CONTAINER][name];
     }
-
-    return this.container[name];
   }
-
-  return descriptor;
 }
 
 // bot.js
@@ -199,6 +230,7 @@ export default class Bot extends Service {
   }
 }
 ```
+To see this code in action, view [this CodeSandBox](https://codesandbox.io/s/dependency-injection-3-mum0p?file=/bot.js)
 
 With this approach we can reference each service by name -- but we have a new problem now:
 _as a framework developer, how do we ensure that service properties match up to the service classes?_
@@ -322,11 +354,48 @@ function bootApp() {
 }
 ```
 
+To see the final implementation, view [this CodeSandBox](https://codesandbox.io/s/dependency-injection-4-5fjzg)
+
+## "That's It!"
+
+Once I realized the implementation of ember's dependency injection, it felt
+simple. It's prerty much a _global store_ where instances of classes are
+stored on that _global store_ and referenced from other places within your app.
+If something here _doesn't_ feel simple, let me know!, and hopefully I can tweak
+this blog post until it does feel simple.
+
+I like the pattern a lot, because it avoids the need to explicitly pass references
+to every object you want to use throughout your entire app. Instead, Ember abstracts
+away the passing of the container object to all objects created through that container
+(mostly components and services, but custom classes can be used as well).
+
 ## Disclaimers
 
 Dependency injection can be a big topic and have a lot of features implemented.
 This demonstration has narrow scope and is not intended to be a "fully featured"
 dependency injection implementation.
+
+## About
+
+Professionally, I had my start to frontend development in React, and at the time
+there was really only Redux and MobX for state management -- but I only had the
+privilege of working with Redux and eventually React's Context Provider/Consumer
+pattern. There _is_ a little bit of overlap between React's Contexts and Ember's
+Services, but they differ in fundamental ways -- which could be a topic for
+another time.
+
+Now that I'm getting paid to work with Ember almost every day I've only
+gotten more excited about the programming patterns introduced by the framework and
+am eager to share them with the world.
+
+
+-----------------------
+
+_This was inspired from some conversations on Twitter as well as trying not
+to use a web framework for building an
+[Artificatial Intelligence to play a game](https://github.com/NullVoxPopuli/doctor-who-thirteen-game-ai/blob/bc09c823abe89894cf7607aaa1820c348b900c10/ai.js#L5)_
+
+
 
 ## References
 
