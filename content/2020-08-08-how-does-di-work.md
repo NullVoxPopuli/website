@@ -159,7 +159,7 @@ export default class Bot extends Service {
 
 This is a little better, we have abstracted away a bit of boilerplate, but there is still
 a "magic property", `container` -- this is generally where object oriented programming
-can get a negative reputation for -- a lock of _proper_ or _incomplete_ abstraction.
+can get a negative reputation for -- a lack of _proper_ or _incomplete_ abstraction.
 
 > _A bad abstraction is worse than no abstraction_
 
