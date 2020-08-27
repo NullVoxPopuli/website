@@ -54,6 +54,72 @@ receives those other objects.
 
 ## Why use Dependency Injection?
 
+For me personally, there are two reasons:
+1. Application State (data and functions) can be easily shared between components
+2. Testing is much easier and can be done in isolation
+
+For #1, there are many ways to share state between components, but I like that
+dependency injection provides a centralized pattern and location for that state
+as well as an ergonomic and light way to interact with that state.
+
+For #2, this is a little harder to boil down to a sentence or two, and ultimately
+comes down overall architecture of your app, how big your app is, and what sorts of
+things provide value when tested. For example, let's say you have some behavior
+for interacting with an external API, maybe it's the [Star Wars JSON api](https://stackoverflow.com/questions/14301389/why-does-one-use-dependency-injection),
+or maybe it's interacting with a game that you're building a bot for -- you _could_
+build all that functionality into your component(s) -- because why prematurely abstract?
+But you could also build that functionality into a _Service_, or "just another
+class that your component will end up using", like this:
+
+```js
+class MyComponent {
+  constructor() {
+    this.api = new StarWarsApi();
+  }
+}
+
+let myComponent = new MyComponent();
+```
+
+This is a great first step! as the `StarWarsApi` can be tested by itself without
+needing to be tied to your component. _However_, your component has the opposite
+problem, it is _dependent_ on the `StarWarsApi`, and there is no way to test
+the behaviors of `MyComponent` without using the real implementation of `StarWarsApi`.
+The solution to this is dependency injection, where the coupling between the
+specific implementation of `StarWarsApi` is reduced to just the interface
+(the list of methods that we care about), and during testing, we can swap out
+the `StarWarsApi` with a fake one that has all the same methods.
+
+```js
+class MyComponent {
+  constructor(api) {
+    this.api = api;
+  }
+}
+
+let fakeApi = { /* fake stuff here */ }
+let myComponent = new MyComponent(fakeApi);
+```
+
+There is _a lot_ of information on this topic, and I think [this StackOverflow Answer](https://stackoverflow.com/a/14301496)
+summarizes it well:
+
+> So, to cut a long story short: Dependency injection is one of two ways of how
+> to remove dependencies in your code. It is very useful for configuration
+> changes after compile-time, and it is a great thing for unit testing
+> (as it makes it very easy to inject stubs and / or mocks).
+
+Which reminds me of the whole point of software engineering and architecture in
+general: _to make testing easier._
+
+If we do not learn from the mistakes of those before us and allow ourselves to make
+testing hard for both our coworkers as well as our future selves, we are doing
+our cowokers (and ourselves!) a disservice.
+
+This could easily go on a tangent about the important and philosphy of testing
+and testing-driven architecture, but that's a topic for another time.
+
+
 ## How does Dependency Injection work in Ember?
 
 ## What does Ember do behind the scenes?
