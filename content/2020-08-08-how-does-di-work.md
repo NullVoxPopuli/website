@@ -114,19 +114,16 @@ general: _to make testing easier._
 
 If we do not learn from the mistakes of those before us and allow ourselves to make
 testing hard for both our coworkers as well as our future selves, we are doing
-our cowokers (and ourselves!) a disservice.
+our coworkers (and ourselves!) a disservice.
 
-This could easily go on a tangent about the important and philosphy of testing
+This could easily go on a tangent about the important and philosophy of testing
 and testing-driven architecture, but that's a topic for another time.
 
 
 ## How does Dependency Injection work in Ember?
 
-## What does Ember do behind the scenes?
-
-
-
-## Let's write our own!
+I think the best way to describe this is to first demonstrate how we would create
+our own dependency injection system from scratch.
 
 This is a bottom-up approach, meaning that we start with the bare minimum, and the
 gradually add more behavior as we move forward. First, we'll need to define some
@@ -267,7 +264,13 @@ export default class Service {
   }
 }
 
-// TODO: explain that this is a decorator
+// this is a decorator, and would be used like `@injectService propertyName`
+// where target is the class, name would be "propertyName", and descriptor is the
+// property descriptor describing the existing "propertyName" on the class that is
+// being decorated
+//
+// For more information on decorators, checkout the above linked decorator plugin
+// for babel.
 export function injectService(target, name, descriptor) {
   return {
     configurable: false,
@@ -422,10 +425,95 @@ function bootApp() {
 
 To see the final implementation, view [this CodeSandBox](https://codesandbox.io/s/dependency-injection-4-5fjzg)
 
-## "That's It!"
+## What does Ember do behind the scenes?
+
+Ember abstracts nearly all of the above from you and provides conventions for
+building out the map of service names to service instances, accessing those
+services, and creating _any_ container aware-object.
+
+The most important thing to know about the container, is that it'll
+provide the contained, known internally-to-ember as the "owner", as
+the first argument to each of your classes.
+
+So, if you want to have your own "kind" of object, maybe it's a bunch of custom
+objects that interact with something external, such as an API, or a Canvas, or WebGL,
+or .. really anything!, it's possible to _registry_ your objects with Ember's
+container.
+
+Ember does this internally for Services, Routes, Controllers, Components, Helpers,
+and Modifiers, but to do what ember is doing, have this somewhere in your app
+
+```js
+// maybe in a Route's beforeModel hook
+let owner = getOwner(this);
+owner.register(
+  /*
+    full name in the format:
+    namespace:name
+  */
+  'webgl:renderer',
+  /* class */
+  Renderer
+);
+```
+
+Now, how would you access that from your component? It's not a service, so the
+service decorator wouldn't work. First, let's look at what the service decorator _does_ look like
+
+```js
+// abridged version of the @service decorator
+//
+//
+// NOTE: ember convention is:
+//   import { inject as service } from '@ember/service';
+export function inject(target, name, descriptor) {
+  return {
+    configurable: false,
+    enumerable: true,
+    get: function() {
+      let owner = getOwner(this);
+
+      return owner.lookup(`service:${name}`);
+    }
+  }
+}
+```
+
+So that way, when you have `@service api`, the _namespace_ gets prepending for
+you, and the `service:api` _full name_ is looked up in the container.
+
+Knowing the above, we can make our own decorator so that we may access the our
+"foo" singleton
+
+
+```js
+export function webgl(target, name, descriptor) {
+  return {
+    configurable: false,
+    enumerable: true,
+    get: function() {
+      let owner = getOwner(this);
+
+      return owner.lookup(`webgl:${name}`);
+    }
+  }
+}
+```
+
+So then _anywhere_ in our app, we could have a component with the following:
+
+```js
+class MyComponent extends Component {
+  @webgl renderer;
+}
+```
+
+
+
+## "That's all, folks!"
 
 Once I realized the implementation of ember's dependency injection, it felt
-simple. It's prerty much a _global store_ where instances of classes are
+simple. It's pretty much a _global store_ where instances of classes are
 stored on that _global store_ and referenced from other places within your app.
 If something here _doesn't_ feel simple, let me know!, and hopefully I can tweak
 this blog post until it does feel simple.
