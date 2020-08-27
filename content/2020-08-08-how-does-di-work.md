@@ -27,7 +27,7 @@ then that I began to understand why dependency injection even exists, and
 how it's actually _simpler_ than _not_ having it at all.
 
 I can't speak to the Vue perspective, but professionally, I had my start
-to frontend development in React, and at the time there really only Redux and
+to frontend development in React, and at the time there was really only Redux and
 MobX for state management -- but I only had the privilege of working with Redux
 and eventually React's Context Provider/Consumer pattern. There _is_ a little bit
 of overlap between React's Contexts and Ember's Services, but they differ in
@@ -332,4 +332,3 @@ dependency injection implementation.
 
 - [TC39 Decorator Proposal](https://github.com/tc39/proposal-decorators)
 - [Ember Documentation on Dependency Injection](https://guides.emberjs.com/release/applications/dependency-injection/)
-
