@@ -63,7 +63,7 @@ Goals:
 
 This could be considered an ancestor to dependency injection, where there exists
 a shared `container` object in the module scope, still allowing for us to
-acheive the first three goals.
+achieve the first three goals.
 
 
 ```ts
