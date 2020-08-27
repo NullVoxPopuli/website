@@ -31,7 +31,7 @@ to frontend development in React, and at the time there was really only Redux an
 MobX for state management -- but I only had the privilege of working with Redux
 and eventually React's Context Provider/Consumer pattern. There _is_ a little bit
 of overlap between React's Contexts and Ember's Services, but they differ in
-fundamental ways, and have pros and cons, which we'll get too.
+fundamental ways, and have pros and cons, which we'll cover.
 
 But first, I'm a proponent of ["show, don't tell"](https://en.wikipedia.org/wiki/Show,_don%27t_tell),
 so we'll start by implementing dependency injection from scratch in order to demystify
