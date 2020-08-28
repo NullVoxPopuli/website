@@ -10,8 +10,10 @@ module.exports = function(defaults) {
     'ember-prism': {
       theme: 'tomorrow',
       components: [
-        'typescript', 'javascript',
-        'json5', 'json',
+        'javascript',
+        'typescript',
+        'json',
+        'json5',
         'js-extras',
         'vim', 'tsx', 'jsx',
         'bash', 'markup-templating', 'markdown',

@@ -2,10 +2,10 @@
   "name": "website",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for website goes here",
-  "repository": "",
+  "description": "https://nullvoxpopuli.com",
+  "repository": "https://github.com/NullVoxPopuli/website/",
   "license": "MIT",
-  "author": "",
+  "author": "NullVoxPopuli",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -33,7 +33,6 @@
     "ember-cli-eslint": "^5.1.0",
     "ember-cli-fastboot": "^2.2.3",
     "ember-cli-htmlbars": "^5.3.1",
-    "ember-cli-htmlbars-inline-precompile": "^3.0.1",
     "ember-cli-inject-live-reload": "^2.0.2",
     "ember-cli-moment-shim": "^3.8.0",
     "ember-cli-sri": "^2.1.1",
@@ -59,10 +58,13 @@
     "qunit-dom": "^1.4.0"
   },
   "engines": {
-    "node": "6.* || 8.* || >= 10.*"
+    "node": ">= 14.9.0"
+  },
+  "ember": {
+    "edition": "octane"
   },
   "volta": {
-    "node": "12.18.0",
-    "yarn": "1.22.4"
+    "node": "14.9.0",
+    "yarn": "1.22.5"
   }
 }
