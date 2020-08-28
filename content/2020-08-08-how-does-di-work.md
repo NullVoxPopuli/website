@@ -34,7 +34,8 @@ and have something concrete that can be referenced.
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Dependency_injection)
 
-> *dependency injection* is a technique in which an object receives other obects that it depends on.
+> *dependency injection* is a technique in which an object receives other
+> objects that it depends on.
 
 _That's it_.
 
@@ -65,7 +66,7 @@ as well as an ergonomic and light way to interact with that state.
 For #2, this is a little harder to boil down to a sentence or two, and ultimately
 comes down overall architecture of your app, how big your app is, and what sorts of
 things provide value when tested. For example, let's say you have some behavior
-for interacting with an external API, maybe it's the [Star Wars JSON api](https://stackoverflow.com/questions/14301389/why-does-one-use-dependency-injection),
+for interacting with an external API, maybe it's the [Star Wars JSON api](https://swapi.dev/),
 or maybe it's interacting with a game that you're building a bot for -- you _could_
 build all that functionality into your component(s) -- because why prematurely abstract?
 But you could also build that functionality into a _Service_, or "just another
