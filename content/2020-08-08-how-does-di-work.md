@@ -26,10 +26,6 @@ I, too, was in that boat -- until I really dove into how it works -- it was
 then that I began to understand why dependency injection even exists, and
 how it's actually _simpler_ than _not_ having it at all.
 
-But first, I'm a proponent of ["show, don't tell"](https://en.wikipedia.org/wiki/Show,_don%27t_tell),
-so we'll start by implementing dependency injection from scratch in order to demystify
-and have something concrete that can be referenced.
-
 ## What is Dependency Injection?
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Dependency_injection)
