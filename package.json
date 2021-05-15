@@ -43,7 +43,7 @@
     "ember-fetch": "^8.0.2",
     "ember-load-initializers": "^2.1.1",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-moment": "^8.0.0",
+    "ember-moment": "8.0.1",
     "ember-qunit": "^4.6.0",
     "ember-resolver": "^8.0.2",
     "ember-responsive-image": "^1.0.0-rc.7",
