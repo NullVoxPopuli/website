@@ -5420,7 +5420,7 @@ ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.12.0, ember-cli-babel@^6.16.0,
     ember-cli-version-checker "^2.1.2"
     semver "^5.5.0"
 
-ember-cli-babel@^7.0.0, ember-cli-babel@^7.1.0, ember-cli-babel@^7.1.2, ember-cli-babel@^7.10.0, ember-cli-babel@^7.11.0, ember-cli-babel@^7.11.1, ember-cli-babel@^7.12.0, ember-cli-babel@^7.13.0, ember-cli-babel@^7.18.0, ember-cli-babel@^7.19.0, ember-cli-babel@^7.20.5, ember-cli-babel@^7.21.0, ember-cli-babel@^7.22.1, ember-cli-babel@^7.23.0, ember-cli-babel@^7.23.1, ember-cli-babel@^7.26.2, ember-cli-babel@^7.26.3, ember-cli-babel@^7.4.1, ember-cli-babel@^7.5.0, ember-cli-babel@^7.7.3:
+ember-cli-babel@^7.0.0, ember-cli-babel@^7.1.0, ember-cli-babel@^7.1.2, ember-cli-babel@^7.10.0, ember-cli-babel@^7.11.0, ember-cli-babel@^7.11.1, ember-cli-babel@^7.12.0, ember-cli-babel@^7.13.0, ember-cli-babel@^7.18.0, ember-cli-babel@^7.19.0, ember-cli-babel@^7.20.5, ember-cli-babel@^7.21.0, ember-cli-babel@^7.22.1, ember-cli-babel@^7.23.0, ember-cli-babel@^7.23.1, ember-cli-babel@^7.26.2, ember-cli-babel@^7.26.3, ember-cli-babel@^7.26.6, ember-cli-babel@^7.4.1, ember-cli-babel@^7.5.0, ember-cli-babel@^7.7.3:
   version "7.26.6"
   resolved "https://registry.npmjs.org/ember-cli-babel/-/ember-cli-babel-7.26.6.tgz#322fbbd3baad9dd99e3276ff05bc6faef5e54b39"
   integrity sha512-040svtfj2RC35j/WMwdWJFusZaXmNoytLAMyBDGLMSlRvznudTxZjGlPV6UupmtTBApy58cEF8Fq4a+COWoEmQ==
@@ -5562,7 +5562,7 @@ ember-cli-htmlbars@^4.3.1:
     strip-bom "^4.0.0"
     walk-sync "^2.0.2"
 
-ember-cli-htmlbars@^5.1.1, ember-cli-htmlbars@^5.2.0, ember-cli-htmlbars@^5.3.1:
+ember-cli-htmlbars@^5.1.1, ember-cli-htmlbars@^5.2.0, ember-cli-htmlbars@^5.3.1, ember-cli-htmlbars@^5.7.1:
   version "5.7.1"
   resolved "https://registry.npmjs.org/ember-cli-htmlbars/-/ember-cli-htmlbars-5.7.1.tgz#eb5b88c7d9083bc27665fb5447a9b7503b32ce4f"
   integrity sha512-9laCgL4tSy48orNoQgQKEHp93MaqAs9ZOl7or5q+8iyGGJHW6sVXIYrVv5/5O9HfV6Ts8/pW1rSoaeKyLUE+oA==
@@ -6187,16 +6187,18 @@ ember-shadow-dom@^0.1.3:
     ember-cli-babel "^7.1.2"
     ember-cli-htmlbars "^3.0.0"
 
-ember-showdown-prism@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.npmjs.org/ember-showdown-prism/-/ember-showdown-prism-2.2.0.tgz#81d2ff98dd0385096c4d820627a79f2fa9691a22"
-  integrity sha512-zM7IWvF1cayfvrL6fGs9bxObyqGk1aDoVRjTy4syY2fk9Qr45Mrq61bMjqXbI6sNPcFzqZbHpgJ9yAEm/6Yp8Q==
+ember-showdown-prism@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/ember-showdown-prism/-/ember-showdown-prism-2.3.0.tgz#ba7387b4560e02b75dc8477868f7963405e468d7"
+  integrity sha512-G+jxk0bfoZH4eW8OLZrTAbdXtuZyTtwGNPukUl6W3qMdcmZDbMYje2SqhXC+LRx9cmfVCn1ffRL4DdZkTHqlTQ==
   dependencies:
     broccoli-funnel "^3.0.1"
-    ember-cli-babel "^7.21.0"
-    ember-cli-htmlbars "^5.2.0"
+    ember-cli-babel "^7.26.6"
+    ember-cli-htmlbars "^5.7.1"
     ember-cli-showdown "^4.5.0"
     ember-prism "^0.8.0"
+    lint-to-the-future "^0.6.0"
+    lint-to-the-future-eslint "^0.2.1"
 
 ember-source-channel-url@^2.0.1:
   version "2.0.1"
@@ -8117,6 +8119,13 @@ ignore@^5.1.1, ignore@^5.1.4:
   resolved "https://registry.npmjs.org/ignore/-/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
   integrity sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
 
+import-cwd@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/import-cwd/-/import-cwd-3.0.0.tgz#20845547718015126ea9b3676b7592fb8bd4cf92"
+  integrity sha512-4pnzH16plW+hgvRECbDWpQl3cqtvSofHWh44met7ESfZ8UZOWWddm8hEyDTqREJ9RbYHY8gi8DqmaelApoOGMg==
+  dependencies:
+    import-from "^3.0.0"
+
 import-fresh@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/import-fresh/-/import-fresh-2.0.0.tgz#d81355c15612d386c61f9ddd3922d4304822a546"
@@ -8132,6 +8141,13 @@ import-fresh@^3.0.0:
   dependencies:
     parent-module "^1.0.0"
     resolve-from "^4.0.0"
+
+import-from@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/import-from/-/import-from-3.0.0.tgz#055cfec38cd5a27d8057ca51376d7d3bf0891966"
+  integrity sha512-CiuXOFFSzkU5x/CR0+z7T91Iht4CXgfCxVOFRhh2Zyhg5wOpWvvDLQUsWl+gcN+QscYBjez8hDCt85O7RLDttQ==
+  dependencies:
+    resolve-from "^5.0.0"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -8965,6 +8981,25 @@ linkify-it@^3.0.1:
   integrity sha512-gDBO4aHNZS6coiZCKVhSNh43F9ioIL4JwRjLZPkoLIY4yZFwg264Y5lu2x6rb1Js42Gh6Yqm2f6L2AJcnkzinQ==
   dependencies:
     uc.micro "^1.0.1"
+
+lint-to-the-future-eslint@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/lint-to-the-future-eslint/-/lint-to-the-future-eslint-0.2.1.tgz#0726dc6d3b1d022d30f4f6d2f4150f1d8aea9640"
+  integrity sha512-KPLzvzNucDHYDmF0jbENIeB4Vf3sqH0WI9JcWex4BxbsaWj1KTtLXKQXQxx5tqFdKeBYn6NopBzt7bDjm/7XWQ==
+  dependencies:
+    esm "^3.2.25"
+    import-cwd "^3.0.0"
+    walk-sync "^2.2.0"
+
+lint-to-the-future@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/lint-to-the-future/-/lint-to-the-future-0.6.0.tgz#b95f4d20b6f5cd3ba8b961af5836d836cac81777"
+  integrity sha512-X73gYmRBFSAD22fKvliQIt1Gft7En4zJ1ZcZnOMziIyPhUiT4KqC/Y9YpWiw3jWNV86cIUM0OAlbEqLzao3XYw==
+  dependencies:
+    fs-extra "^7.0.1"
+    import-cwd "^3.0.0"
+    minimist "^1.2.5"
+    node-fetch "^2.6.0"
 
 livereload-js@^2.3.0:
   version "2.4.0"
@@ -11525,6 +11560,11 @@ resolve-from@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/resolve-from/-/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
   integrity sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==
+
+resolve-from@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-5.0.0.tgz#c35225843df8f776df21c57557bc087e9dfdfc69"
+  integrity sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==
 
 resolve-package-path@^1.0.11, resolve-package-path@^1.2.2, resolve-package-path@^1.2.6:
   version "1.2.7"
