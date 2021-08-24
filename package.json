@@ -53,7 +53,7 @@
     "ember-welcome-page": "^4.0.0",
     "empress-blog": "^2.0.0",
     "empress-blog-casper-template": "3.3.0",
-    "eslint-plugin-ember": "^8.13.0",
+    "eslint-plugin-ember": "10.5.4",
     "loader.js": "^4.7.0",
     "prember": "^1.0.5",
     "qunit-dom": "^1.4.0"
