@@ -9,7 +9,7 @@ module.exports = function (defaults) {
     },
     // https://github.com/kaliber5/ember-responsive-image#configuration
     'responsive-image': {
-      deviceWidths: [320, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+      deviceWidths: [120, 320, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
       images: [
         {
           include: 'assets/images/**/*',
@@ -21,8 +21,8 @@ module.exports = function (defaults) {
           },
           removeSource: true,
           justCopy: false,
-        }
-      ]
+        },
+      ],
     },
     'ember-prism': {
       theme: 'tomorrow',
