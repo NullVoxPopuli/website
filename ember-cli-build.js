@@ -17,7 +17,6 @@ module.exports = function (defaults) {
           formats: ['webp'],
           lqip: {
             type: 'inline',
-            targetPixels: 60,
           },
           removeSource: true,
           justCopy: false,
