@@ -26,6 +26,7 @@ module.exports = function (environment) {
     blog: {
       title: 'NullVoxPopuli',
       description: 'a blog about technology',
+      twitter: 'nullvoxpopuli',
       // description: `
       //   null: a keyword indicating that something has no value.\n
       //   vox populi: the voice of the people
@@ -43,16 +44,6 @@ module.exports = function (environment) {
         //   id: 'chris-manson'
         // }
       ],
-    },
-
-    'responsive-image': {
-      sourceDir: 'images',
-      destinationDir: 'responsive-images',
-      quality: 80,
-      supportedWidths: [2000, 1000, 600, 300],
-      removeSourceDir: false,
-      justCopy: false,
-      extensions: ['jpg', 'jpeg', 'png', 'gif'],
     },
   };
 
