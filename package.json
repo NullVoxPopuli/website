@@ -54,7 +54,7 @@
     "ember-showdown-prism": "^2.3.0",
     "ember-source": "^3.27.5",
     "ember-template-lint": "^3.6.0",
-    "ember-welcome-page": "^4.0.0",
+    "ember-welcome-page": "5.0.0",
     "empress-blog": "^3.3.0",
     "empress-blog-casper-template": "4.0.1",
     "eslint": "^7.32.0",
