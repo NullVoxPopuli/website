@@ -52,7 +52,7 @@
     "ember-resolver": "^8.0.2",
     "ember-shadow-dom": "^2.0.1",
     "ember-showdown-prism": "^2.3.0",
-    "ember-source": "^3.27.5",
+    "ember-source": "3.28.9",
     "ember-template-lint": "^3.6.0",
     "ember-welcome-page": "^4.0.0",
     "empress-blog": "^3.3.0",
