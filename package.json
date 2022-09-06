@@ -75,7 +75,7 @@
   },
   "volta": {
     "node": "14.17.5",
-    "yarn": "1.22.11"
+    "yarn": "1.22.19"
   },
   "dependencies": {
     "@ember/render-modifiers": "^2.0.4",
