@@ -11,3 +11,5 @@ mastodon: https://mastodon.coffee/@nullvoxpopuli
 facebook:
 location: United States
 ---
+
+<a rel="me" href="https://mastodon.coffee/@nullvoxpopuli">Mastodon</a>
