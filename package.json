@@ -49,7 +49,7 @@
     "ember-shadow-dom": "^2.0.1",
     "ember-showdown-prism": "^3.2.0",
     "ember-source": "^4.6.0",
-    "ember-template-lint": "^4.14.0",
+    "ember-template-lint": "^5.0.0",
     "empress-blog": "^4.1.0",
     "empress-blog-casper-template": "4.3.0",
     "eslint": "^7.32.0",
