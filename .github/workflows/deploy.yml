@@ -39,7 +39,7 @@ jobs:
       - run: pnpm build
       - run: pnpm ember build --environment production
       - name: Publish ${{ matrix.app.id }}
-        uses: cloudflare/pages-action@v1.4.1
+        uses: cloudflare/pages-action@v1.5.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
