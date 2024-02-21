@@ -24,6 +24,7 @@
     "test:ember": "ember test",
     "deploy": "ember build -e production && cp config/_redirects dist/"
   },
+  "fastbootDependencies": ["crypto"],
   "devDependencies": {
     "@babel/core": "^7.23.6",
     "@ember/optional-features": "^2.0.0",
