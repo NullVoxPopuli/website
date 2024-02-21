@@ -16,7 +16,19 @@ env:
   TURBO_TOKEN: this-is-not-a-secret
   TURBO_TEAM: myself
 
+
+
 jobs:
+  can_build:
+    if: github.ref != 'refs/heads/main' || github.ref != 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: wyvox/action@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: pnpm build
+
   DeployProduction:
     name: "Deploy: Production"
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
