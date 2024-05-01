@@ -16,7 +16,7 @@ patchedDependencies:
     hash: dcxzrgawlptlsqe6igpdtfdgzu
     path: patches/broccoli-static-site-json@4.5.0.patch
   ember-cli-showdown@6.0.1:
-    hash: vsnlpnqloqmp5s3ie2dij6dyv4
+    hash: 4c32p4girp2zn4uoafyz6xqqoq
     path: patches/ember-cli-showdown@6.0.1.patch
 
 importers:
@@ -12209,7 +12209,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli-showdown@6.0.1(patch_hash=vsnlpnqloqmp5s3ie2dij6dyv4)(webpack@5.91.0):
+  ember-cli-showdown@6.0.1(patch_hash=4c32p4girp2zn4uoafyz6xqqoq)(webpack@5.91.0):
     dependencies:
       broccoli-funnel: 2.0.2
       broccoli-source: 1.1.0
@@ -12936,7 +12936,7 @@ snapshots:
       ember-body-class: 2.1.1
       ember-cli-babel: 7.26.11
       ember-cli-htmlbars: 5.7.2
-      ember-cli-showdown: 6.0.1(patch_hash=vsnlpnqloqmp5s3ie2dij6dyv4)(webpack@5.91.0)
+      ember-cli-showdown: 6.0.1(patch_hash=4c32p4girp2zn4uoafyz6xqqoq)(webpack@5.91.0)
       ember-cli-string-utils: 1.1.0
       ember-decorators-polyfill: 1.1.5(@babel/core@7.24.4)
       ember-get-config: 0.5.0

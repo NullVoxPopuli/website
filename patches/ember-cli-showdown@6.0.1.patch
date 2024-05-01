@@ -30,7 +30,7 @@ index 188d8e7e7e1d31e0534ab2250f7984c1d1bc8915..2d0cc84e663146c47afd6f80a54d452b
 +  if (footnoteMap[name]) {
 +    return footnoteMap[name];
 +  }
- 
+
 -const CONFIG_LOOKUP = 'config:environment';
 +  footnoteMap[name] = footnoteCount++;
 +
@@ -91,7 +91,7 @@ index 188d8e7e7e1d31e0534ab2250f7984c1d1bc8915..2d0cc84e663146c47afd6f80a54d452b
 +    {
 +      type: "lang",
 +      filter: function filter(text) {
-+        return text.replace(/\[\^([\d\w]+)\]/m, function (str, name) {
++        return text.replace(/\[\^([^\]]+)\]/m, function (str, name) {
 +          let count = getCountForName(name);
 +          return (
 +            '<a href="#footnote-' + name + '"><sup>[' + count + "]</sup></a>"
@@ -103,24 +103,24 @@ index 188d8e7e7e1d31e0534ab2250f7984c1d1bc8915..2d0cc84e663146c47afd6f80a54d452b
 +}
 +
 +const CONFIG_LOOKUP = "config:environment";
- 
+
  const ShowdownComponent = Component.extend({
    layout,
 -  markdown: '',
 +  markdown: "",
    extensions: null,
- 
+
    _globalOptions: null,
- 
+
 -  defaultOptionKeys: computed(function() {
 +  defaultOptionKeys: computed(function () {
      return Object.keys(showdown.getDefaultOptions());
    }).readOnly(),
- 
+
 @@ -34,29 +118,31 @@ const ShowdownComponent = Component.extend({
      }
    },
- 
+
 -  html: computed('converter', 'defaultOptionKeys', 'markdown', function() {
 +  html: computed("converter", "defaultOptionKeys", "markdown", function () {
      let showdownOptions = this.getShowdownProperties(
@@ -129,7 +129,7 @@ index 188d8e7e7e1d31e0534ab2250f7984c1d1bc8915..2d0cc84e663146c47afd6f80a54d452b
      );
 -    let converter = get(this, 'converter');
 +    let converter = get(this, "converter");
- 
+
      for (let option in showdownOptions) {
        if (
          showdownOptions.hasOwnProperty(option) &&
@@ -139,36 +139,36 @@ index 188d8e7e7e1d31e0534ab2250f7984c1d1bc8915..2d0cc84e663146c47afd6f80a54d452b
          converter.setOption(option, showdownOptions[option]);
        }
      }
- 
+
 -    return htmlSafe(converter.makeHtml(get(this, 'markdown')));
 +    return htmlSafe(converter.makeHtml(get(this, "markdown")));
    }).readOnly(),
- 
+
 -  converter: computed('extensions', function() {
 -    let extensions = get(this, 'extensions');
 +  converter: computed("extensions", function () {
 +    let extensions = get(this, "extensions") || [];
 +
 +    extensions.push(footnotes);
- 
+
 -    if (typeof extensions === 'string') {
 -      extensions = extensions.split(' ');
 +    if (typeof extensions === "string") {
 +      extensions = extensions.split(" ");
      }
- 
+
      return new showdown.Converter({ extensions });
 @@ -74,11 +160,11 @@ const ShowdownComponent = Component.extend({
- 
+
        return accumulator;
      }, {});
 -  }
 +  },
  });
- 
+
  ShowdownComponent.reopenClass({
 -  positionalParams: ['markdown']
 +  positionalParams: ["markdown"],
  });
- 
+
  export default ShowdownComponent;
