@@ -18,6 +18,12 @@ module.exports = function (environment) {
       },
     },
 
+    // ember-cli-showdown
+    showdown: {
+      flavor: 'github',
+      tables: true,
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

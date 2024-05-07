@@ -19,7 +19,7 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "start": "ember serve",
+    "start": "FASTBOOT_DISABLED=true ember serve",
     "test:ember": "ember test",
     "deploy": "ember build -e production && cp config/_redirects dist/"
   },
@@ -91,12 +91,23 @@
     "@glimmer/component": "1.1.2",
     "@glimmer/tracking": "1.1.2",
     "ember-prism": "^0.13.0",
-    "prismjs-glimmer": "^1.1.1"
+    "prismjs-glimmer": "^1.1.1",
+    "showdown": "^2.1.0",
+    "showdown-footnotes": "^2.1.2"
   },
   "pnpm": {
     "overrides": {
+      "showdown": "2.1.0",
       "ember-prism": "^0.13.0",
       "prismjs-glimmer": "^1.1.1"
+    },
+    "packageExtensions": {
+      "ember-cli-showdown": {
+        "dependencies": {
+          "ember-auto-import": "^2.7.0",
+          "showdown-footnotes": "^2.1.2"
+        }
+      }
     },
     "notes": {
       "overrides": "can't trust some of our deps to have their deps up to date",
@@ -113,6 +124,10 @@
       "ignoreMissing": [
         "rollup"
       ]
+    },
+    "patchedDependencies": {
+      "broccoli-static-site-json@4.5.0": "patches/broccoli-static-site-json@4.5.0.patch",
+      "ember-cli-showdown@6.0.1": "patches/ember-cli-showdown@6.0.1.patch"
     }
   }
 }

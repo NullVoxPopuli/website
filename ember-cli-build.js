@@ -1,6 +1,10 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const showdown = require('showdown');
+
+showdown.setFlavor('github');
+showdown.setOption('tables', true);
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {

@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>nullvoxpopuli.com</title>
-    <meta name="description" content="NullVoxPopuli's blog">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    {{content-for "head"}}
+  <title>nullvoxpopuli.com</title>
+  <meta name="description" content="NullVoxPopuli's blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/website.css">
+  {{content-for "head"}}
 
-    {{content-for "head-footer"}}
+  <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+  <link integrity="" rel="stylesheet" href="{{rootURL}}assets/website.css">
 
-    <style>
-      a.token.md-link {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    {{content-for "body"}}
+  {{content-for "head-footer"}}
 
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/website.js"></script>
+  <style>
+    a.token.md-link {
+      text-decoration: underline;
+    }
+  </style>
+</head>
 
-    {{content-for "body-footer"}}
+<body>
+  {{content-for "body"}}
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143098395-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <script src="{{rootURL}}assets/blurhash.js"></script>
+  <script src="{{rootURL}}assets/vendor.js"></script>
+  <script src="{{rootURL}}assets/website.js"></script>
 
-      gtag('config', 'UA-143098395-1');
-    </script>
-    <a rel="me" style="display: none" href="https://mastodon.coffee/@nullvoxpopuli">Mastodon</a>
-  </body>
+  {{content-for "body-footer"}}
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143098395-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143098395-1');
+  </script>
+  <a rel="me" style="display: none" href="https://mastodon.coffee/@nullvoxpopuli">Mastodon</a>
+</body>
+
 </html>

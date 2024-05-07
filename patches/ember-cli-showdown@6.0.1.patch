@@ -1,0 +1,174 @@
+diff --git a/addon/components/markdown-to-html.js b/addon/components/markdown-to-html.js
+index 188d8e7e7e1d31e0534ab2250f7984c1d1bc8915..2d0cc84e663146c47afd6f80a54d452b67c23d84 100644
+--- a/addon/components/markdown-to-html.js
++++ b/addon/components/markdown-to-html.js
+@@ -1,21 +1,105 @@
+ /* eslint-disable ember/no-classic-components, ember/no-classic-classes, ember/require-tagless-components, prettier/prettier, ember/no-assignment-of-untracked-properties-used-in-tracking-contexts, ember/no-get, no-prototype-builtins */
+-import showdown from 'showdown';
+-import Component from '@ember/component';
+-import { htmlSafe } from '@ember/template';
+-import { get, computed } from '@ember/object';
+-import { getOwner } from '@ember/application';
+-import layout from '../templates/components/markdown-to-html';
++import showdown from "showdown";
++import Component from "@ember/component";
++import { htmlSafe } from "@ember/template";
++import { get, computed } from "@ember/object";
++import { getOwner } from "@ember/application";
++import layout from "../templates/components/markdown-to-html";
++
++var converter = new showdown.Converter();
++
++// Had to fork it, because the showdown ecosystem is seems dead.
++// Or my my search skills are starting to get bad.
++//
++// https://github.com/halbgut/showdown-footnotes/blob/master/dist/index.js
++let footnoteCount = 1;
++let footnoteMap = {};
++
++function getCountForName(name) {
++  if (footnoteMap[name]) {
++    return footnoteMap[name];
++  }
+
+-const CONFIG_LOOKUP = 'config:environment';
++  footnoteMap[name] = footnoteCount++;
++
++  return footnoteMap[name];
++}
++
++function footnotes() {
++  return [
++    {
++      type: "lang",
++      filter: function filter(text) {
++        return text.replace(
++          /^\[\^([^\]]+)\]:\s*((\n+(\s{2,4}|\t).+)+)$/gm,
++          function (str, name, rawContent, _, padding) {
++            var content = converter.makeHtml(
++              rawContent.replace(new RegExp("^" + padding, "gm"), ""),
++            );
++
++            let count = getCountForName(name);
++
++            return (
++              '<div class="footnote" id="footnote-' +
++              name +
++              '"><a href="#footnote-' +
++              name +
++              '"><sup>[' +
++              count +
++              "]</sup></a>:" +
++              content +
++              "</div>"
++            );
++          },
++        );
++      },
++    },
++    {
++      type: "lang",
++      filter: function filter(text) {
++        return text.replace(
++          /^\[\^([^\]]+)\]:( |\n)((.+\n)*.+)$/gm,
++          function (str, name, _, content) {
++            let count = getCountForName(name);
++            return (
++              '<small class="footnote" id="footnote-' +
++              name +
++              '"><a href="#footnote-' +
++              name +
++              '"><sup>[' +
++              count +
++              "]</sup></a>: " +
++              content +
++              "</small>"
++            );
++          },
++        );
++      },
++    },
++    {
++      type: "lang",
++      filter: function filter(text) {
++        return text.replace(/\[\^([^\]]+)\]/mg, function (str, name) {
++          let count = getCountForName(name);
++          return (
++            '<a href="#footnote-' + name + '"><sup>[' + count + "]</sup></a>"
++          );
++        });
++      },
++    },
++  ];
++}
++
++const CONFIG_LOOKUP = "config:environment";
+
+ const ShowdownComponent = Component.extend({
+   layout,
+-  markdown: '',
++  markdown: "",
+   extensions: null,
+
+   _globalOptions: null,
+
+-  defaultOptionKeys: computed(function() {
++  defaultOptionKeys: computed(function () {
+     return Object.keys(showdown.getDefaultOptions());
+   }).readOnly(),
+
+@@ -34,29 +118,31 @@ const ShowdownComponent = Component.extend({
+     }
+   },
+
+-  html: computed('converter', 'defaultOptionKeys', 'markdown', function() {
++  html: computed("converter", "defaultOptionKeys", "markdown", function () {
+     let showdownOptions = this.getShowdownProperties(
+-      get(this, 'defaultOptionKeys')
++      get(this, "defaultOptionKeys"),
+     );
+-    let converter = get(this, 'converter');
++    let converter = get(this, "converter");
+
+     for (let option in showdownOptions) {
+       if (
+         showdownOptions.hasOwnProperty(option) &&
+-        typeof showdownOptions[option] !== 'undefined'
++        typeof showdownOptions[option] !== "undefined"
+       ) {
+         converter.setOption(option, showdownOptions[option]);
+       }
+     }
+
+-    return htmlSafe(converter.makeHtml(get(this, 'markdown')));
++    return htmlSafe(converter.makeHtml(get(this, "markdown")));
+   }).readOnly(),
+
+-  converter: computed('extensions', function() {
+-    let extensions = get(this, 'extensions');
++  converter: computed("extensions", function () {
++    let extensions = get(this, "extensions") || [];
++
++    extensions.push(footnotes);
+
+-    if (typeof extensions === 'string') {
+-      extensions = extensions.split(' ');
++    if (typeof extensions === "string") {
++      extensions = extensions.split(" ");
+     }
+
+     return new showdown.Converter({ extensions });
+@@ -74,11 +160,11 @@ const ShowdownComponent = Component.extend({
+
+       return accumulator;
+     }, {});
+-  }
++  },
+ });
+
+ ShowdownComponent.reopenClass({
+-  positionalParams: ['markdown']
++  positionalParams: ["markdown"],
+ });
+
+ export default ShowdownComponent;
