@@ -75,6 +75,26 @@ Syntax Highlighting for [prism.js](https://prismjs.com/)
 
 ## NPM Tools
 
+### [y-which](https://github.com/NullVoxPopuli/y-which)
+
+For debugging which version of a dependency is resolveable from directories. Helpful with investigating issues with peerDependencies
+
+### [node-confirm](https://github.com/NullVoxPopuli/node-confirm)
+
+For helping with interactive CLIs, prompts the user if they are sure.
+
+### [turbo-daemon](https://github.com/NullVoxPopuli/turbo-daemon)
+
+Allows you to run a [turborepo](https://turbo.build/repo/) server locally as a daemon, for connecting to remote storage (such as S3) -- helpful when you're on a team where developers have their own S3 accounts.
+
+### [salvatore](https://github.com/NullVoxPopuli/salvatore)
+
+Daemon and Pidfile manager allowing you to idempotently start daemons in tooling.
+
+### [dependency-maintainers](https://github.com/NullVoxPopuli/dependency-maintainers)
+
+List who maintains your dependencies.
+
 ### [ember-apply](https://ember-apply.pages.dev/)
 
 Collection of monorepo management and script-aiding utilities for managing docs automation as well as codemodding and monorepo maintenance.
