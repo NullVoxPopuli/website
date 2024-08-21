@@ -77,6 +77,7 @@ Here is how you find them:
 
   3. If the package.json you're looking at does not have an `exports` config, _and_ the library is an ember-addon (has `ember-addon` listed in `keywords`), this likely the older "v1 addon" format, which was convention-based, and didn't follow broader standards (as they didn't exist yet). _By convention_, you'll need to check the `app` folder for your components/modifiers/helpers, and see what those files define or re-export. You can then import what those files use.
     For example, if you find `app/components/foo.js` contains `export { default } from 'libraryName/some-other-folder/foo`, you can import from that same location. e.g.:
+
     ```js
     import theDefaultExport from 'libraryName/some-other-folder/foo';
     ```
