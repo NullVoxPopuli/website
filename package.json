@@ -87,7 +87,7 @@
   },
   "dependencies": {
     "@ember/render-modifiers": "^2.1.0",
-    "@ember/string": "^3.1.1",
+    "@ember/string": "^4.0.0",
     "@glimmer/component": "1.1.2",
     "@glimmer/tracking": "1.1.2",
     "ember-prism": "^1.0.0",
