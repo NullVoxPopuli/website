@@ -16,7 +16,7 @@ tags:
 # Where do I import the thing?
 
 
-Ember has historically allowed access to everything in a global scope, like web-components. This proved confusing for developers, and Ember has moved to a more explicit, import-what-you-need approach, called "template-tag" -- more information on that here: https://guides.emberjs.com/release/components/template-tag-format/
+Ember has historically allowed access to everything in a global scope, like web-components. This proved confusing for developers, and Ember has moved to a more explicit, import-what-you-need approach, called "template-tag" -- more information on that [here, in the official guides](https://guides.emberjs.com/release/components/template-tag-format/).
 
 A common thing I hear from folks is that they don't know where to import a component/modifier/helper from a particular addon, or maybe assume that because something isn't documented, they can't import the component/modifier/helper.
 
