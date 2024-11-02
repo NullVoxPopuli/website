@@ -8,7 +8,8 @@ featured: true
 authors:
   - nullvoxpopuli
 date: Sun Jan 07 2024 11:13:54 GMT-0500 (Eastern Standard Time)
-tags:
+tags: [] 
+
 ---
 
 [Socials here](https://linktr.ee/nullvoxpopuli).
