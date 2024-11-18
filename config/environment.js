@@ -54,6 +54,11 @@ module.exports = function (environment) {
           route: 'page',
           id: 'links',
         },
+        {
+          label: 'AI',
+          route: 'page',
+          id: 'ai',
+        },
       ],
     },
 
