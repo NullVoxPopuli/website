@@ -12,8 +12,6 @@ tags: []
 
 ---
 
-[Socials here](https://linktr.ee/nullvoxpopuli).
-
 Here is a list of docs, sites, and apps that I work on.
 
 ## [limber](https://limber.glimdown.com)
