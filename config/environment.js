@@ -49,6 +49,11 @@ module.exports = function (environment) {
           route: 'page',
           id: 'sites',
         },
+        {
+          label: 'Links & Socials',
+          route: 'page',
+          id: 'links',
+        },
       ],
     },
 

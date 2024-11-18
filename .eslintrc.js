@@ -4,4 +4,17 @@
 const { configs } = require('@nullvoxpopuli/eslint-configs');
 
 // accommodates: JS, TS, App, Addon, and V2 Addon
-module.exports = configs.ember();
+const config = configs.ember();
+
+module.exports = {
+  ...config,
+  overrides: [
+    ...config.overrides,
+    {
+      files: ['**/*.{js,ts}'],
+      rules: {
+        'n/no-unsupported-features/node-builtins': 'off',
+      },
+    },
+  ],
+};

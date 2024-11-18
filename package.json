@@ -27,30 +27,30 @@
     "crypto"
   ],
   "devDependencies": {
-    "@babel/core": "^7.24.4",
-    "@babel/eslint-parser": "7.24.1",
-    "@ember/optional-features": "^2.0.0",
-    "@ember/test-helpers": "^3.2.1",
-    "@nullvoxpopuli/eslint-configs": "^3.2.2",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "7.25.9",
+    "@ember/optional-features": "^2.2.0",
+    "@ember/test-helpers": "^4.0.4",
+    "@nullvoxpopuli/eslint-configs": "^4.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.14.0",
+    "@typescript-eslint/parser": "^8.14.0",
     "broccoli-asset-rev": "^3.0.0",
-    "ember-auto-import": "^2.7.1",
+    "ember-auto-import": "^2.10.0",
     "ember-cli": "5.8.0",
-    "ember-cli-app-version": "^6.0.1",
+    "ember-cli-app-version": "^7.0.0",
     "ember-cli-babel": "^8.2.0",
-    "ember-cli-dependency-checker": "^3.3.2",
+    "ember-cli-dependency-checker": "^3.3.3",
     "ember-cli-fastboot": "^4.1.2",
     "ember-cli-htmlbars": "^6.3.0",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
-    "ember-data": "~4.12.0",
+    "ember-data": "~4.8.0",
     "ember-fetch": "^8.1.2",
-    "ember-load-initializers": "^2.1.2",
+    "ember-load-initializers": "^3.0.1",
     "ember-page-title": "^8.1.0",
-    "ember-qunit": "^8.0.2",
-    "ember-resolver": "^11.0.1",
+    "ember-qunit": "^8.1.1",
+    "ember-resolver": "^13.0.2",
     "ember-shadow-dom": "^2.0.1",
     "ember-showdown-prism": "^4.4.0",
     "ember-source": "^4.6.0",
@@ -69,21 +69,17 @@
     "prettier": "^3.1.1",
     "prismjs": "^1.29.0",
     "qunit": "^2.20.0",
-    "qunit-dom": "^3.1.2",
-    "sharp": "0.33.3",
+    "qunit-dom": "^3.3.0",
+    "sharp": "0.33.5",
     "typescript": "^5.4.5",
-    "webpack": "^5.89.0"
+    "webpack": "^5.96.1"
   },
+  "packageManager": "pnpm@9.13.0",
   "engines": {
-    "node": ">= 18.0.0"
+    "node": ">= 22.0.0"
   },
   "ember": {
     "edition": "octane"
-  },
-  "volta": {
-    "node": "20.18.0",
-    "yarn": "1.22.22",
-    "pnpm": "9.5.0"
   },
   "dependencies": {
     "@ember/render-modifiers": "^2.1.0",
