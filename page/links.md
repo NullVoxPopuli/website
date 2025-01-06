@@ -16,7 +16,6 @@ These are all the NullVoxPopuli accounts
 
 - [BlueSky](https://bsky.app/profile/nullvoxpopuli.com)
 - [GitHub](https://github.com/NullVoxPopuli/)
-- [Ko-Fi](https://ko-fi.com/nullvoxpopuli)
 - [Mastodon](https://mastodon.coffee/@nullvoxpopuli)
 - [Discord](http://discord.gg/cTvtmJhFNY)
 - [YouTube](https://www.youtube.com/@NullVoxPopuli)
