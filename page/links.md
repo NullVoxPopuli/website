@@ -31,7 +31,7 @@ These are all the NullVoxPopuli accounts
 
 Links mirrored on [Linktree](https://linktr.ee/nullvoxpopuli).
 
-If you'd like to buy me a coffee:
+If you'd like to buy NullVoxPopuli a coffee:
 
 - [GitHub Sponsors](https://github.com/sponsors/NullVoxPopuli?frequency=one-time&amount=5)
 - [Ko-Fi](https://ko-fi.com/nullvoxpopuli)
