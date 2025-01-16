@@ -1,9 +1,9 @@
 ---
 title: Design Systems in Ember
-image:
+image: /images/clark-van-der-beken-P6jpTN3c8uY-unsplash.jpg
 imageMeta:
-  attribution:
-  attributionLink:
+  attribution: "Clark Van Der Beken"
+  attributionLink: https://unsplash.com/photos/brown-concrete-building-P6jpTN3c8uY
 featured: true
 authors:
   - nullvoxpopuli
@@ -30,9 +30,18 @@ The "Polaris" category can be used as a learning tool to see how folks should be
 There is "Pre-Polaris", which means that the design system is nearly Polaris, but missing one or two modern patterns to be considered Polaris.
 Lastly, there is the "Needs Work" category, which is to concisely say that the design systems has a number of migrations to do before I would recommend someone look at the code for learning how to write modern Ember.
 
+<style>
+  /* blog theme uses the wrong default */
+  p img {
+    max-width: 100% !important;
+  }
+</style>
+
 ## Polaris 
 
 - [Elastic EUI](https://github.com/prysmex/ember-eui/tree/master) » [Docs](https://ember-eui.vercel.app/) | [npm](https://www.npmjs.com/package/@ember-eui/core)
+
+    ![screenshot of EUI](/images/design-systems/ember-eui.png)
 
     ```bash
     npm add @ember-eui/core 
@@ -43,6 +52,8 @@ Lastly, there is the "Needs Work" category, which is to concisely say that the d
 
 - [Hokulea](https://github.com/hokulea/hokulea) » [Docs](https://hokulea.netlify.app/) | [npm](https://www.npmjs.com/package/@hokulea/ember) 
 
+    ![screenshot of Hokulea](/images/design-systems/hokulea.png)
+
     ```bash
     npm add @hokulea/ember
     ```
@@ -50,6 +61,8 @@ Lastly, there is the "Needs Work" category, which is to concisely say that the d
     Hokulea is a fully modern _whimsical_ design system from [gossi](https://github.com/gossi) that demonstrates Storybook integration and workflows for documenting each component. This design system supports themeing, is research driven, and has enough components to build a real product without needing to write more components!
 
 - [Frontile](https://github.com/josemarluedke/frontile) » [Docs](https://frontile.dev/) | [npm](https://www.npmjs.com/package/@frontile/buttons) 
+
+    ![screenshot of Frontile](/images/design-systems/frontile.png)
 
     ```bash
     npm add @frontile/buttons @frontile/overlays # ... 
@@ -59,6 +72,8 @@ Lastly, there is the "Needs Work" category, which is to concisely say that the d
     There are enough components to build whole products without creating any additional components.
 
 - [Carbon](https://github.com/IBM/carbon-components-ember) » [Docs](https://ibm.github.io/carbon-components-ember/) | [npm](https://www.npmjs.com/package/carbon-components-ember) 
+
+    ![screenshot of Carbon](/images/design-systems/carbon.png)
 
     ```bash
     npm add carbon-components-ember
@@ -70,6 +85,8 @@ Lastly, there is the "Needs Work" category, which is to concisely say that the d
 ## Pre-Polaris 
 
 - [Helios](https://github.com/hashicorp/design-system) » [Docs](https://helios.hashicorp.design/) | [npm](https://www.npmjs.com/package/@hashicorp/design-system-components)
+
+    ![screenshot of Helios](/images/design-systems/helios.png)
     
     ```bash
     npm add @hashicorp/design-system-components
@@ -85,6 +102,8 @@ This is different from normal browser libraries (sometimes call "V2 Addons"), wh
 
 - [UI Kit](https://github.com/adfinis/ember-uikit) » [Docs](https://docs.adfinis.com/ember-uikit/) | [npm](https://www.npmjs.com/package/ember-uikit)
 
+    ![screenshot of UI Kit](/images/design-systems/uikit.png)
+
     ```bash
     npm add ember-uikit
     ```
@@ -92,8 +111,9 @@ This is different from normal browser libraries (sometimes call "V2 Addons"), wh
     This design system looks polished, but it provides no Types, is not a V2 Addon, and doesn't use any gjs or gts components -- however, this does not mean it's not a solid choice for bootstrapping a new project! If you're writing javascript, and don't want to read this design-system's code, this is a _fine_ option.
 
 
-- [Bootstrap](https://www.ember-bootstrap.com/) » [Dcos](https://www.ember-bootstrap.com/) | [npm](https://www.npmjs.com/package/ember-bootstrap)
+- [Bootstrap](https://www.ember-bootstrap.com/) » [Docs](https://www.ember-bootstrap.com/) | [npm](https://www.npmjs.com/package/ember-bootstrap)
 
+    ![screenshot of Bootstrap](/images/design-systems/ember-bootstrap.png)
 
     ```bash
     npm add ember-bootstrap
@@ -103,7 +123,9 @@ This is different from normal browser libraries (sometimes call "V2 Addons"), wh
     This library is not a V2 Addon, does not use Types, and doesn't use any gjs or gts components.
 
 
-- [Material Design](https://github.com/adopted-ember-addons/ember-paper) » [Dcos](https://ember-paper.netlify.app/) | [npm](https://www.npmjs.com/package/ember-paper)
+- [Material Design](https://github.com/adopted-ember-addons/ember-paper) » [Docs](https://ember-paper.netlify.app/) | [npm](https://www.npmjs.com/package/ember-paper)
+
+    ![screenshot of ember-paper](/images/design-systems/ember-paper.png)
 
     ```bash
     npm add ember-paper
