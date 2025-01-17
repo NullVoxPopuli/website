@@ -151,7 +151,7 @@ UI Primitives:
 Utility Primitives:
   - [reactiveweb](https://reactive.nullvoxpopuli.com/) - low-level reactive utilities and reactive wrappers of common web APIs.
   - [ember-keyboard](https://emberobserver.com/addons/ember-keyboard) - easy key-combos.
-  - [ember-concurrenty](https://emberobserver.com/addons/ember-concurrency) - easy concurrent behaviors, prevent users from submitting forms multiple times.
+  - [ember-concurrency](https://emberobserver.com/addons/ember-concurrency) - easy concurrent behaviors, prevent users from submitting forms multiple times.
   - [ember-statechart-component](https://github.com/NullVoxPopuli/ember-statechart-component) - Use XState statecharts as components, allowing easy drop-in diagram-based logic implementation.
 
 Testing and Documentation:
