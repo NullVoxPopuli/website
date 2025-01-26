@@ -71,6 +71,17 @@ Lastly, there is the "Needs Work" category, which is to concisely say that the d
     This design system from [josemarluedke](https://github.com/josemarluedke) is a fully modern, thorough, up to date design system.
     There are enough components to build whole products without creating any additional components.
 
+- [NRG UI](https://github.com/knoxville-utilities-board/nrg-ui) » [Docs](https://knoxville-utilities-board.github.io/nrg-ui/) | [npm](https://www.npmjs.com/package/@nrg-ui/core)
+
+    ![screenshot of Frontile](/images/design-systems/nrg-ui.png)
+
+    ```bash
+    npm add @nrg-ui/core 
+    ```
+
+    This design system from the [Knoxville Utilities Board](https://www.kub.org/) is built on top of bootstrap5, utilizes Polaris patterns, and builds on top of a design system in plain CSS.
+    There are enough components to build whole products without creating any additional components.
+
 - [Carbon](https://github.com/IBM/carbon-components-ember) » [Docs](https://ibm.github.io/carbon-components-ember/) | [npm](https://www.npmjs.com/package/carbon-components-ember) 
 
     ![screenshot of Carbon](/images/design-systems/carbon.png)
