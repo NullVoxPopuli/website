@@ -30,6 +30,14 @@ Graphs dependency usage grouped by major release, revealing adoption and ecosyst
 
 Tests your color perception and shows you how you measure against the numerical representations of all colors. Defaults to blue vs green, but can be configured for any pair of colors.
 
+## [turborepo summaryfile analyzer](https://turbo.nullvoxpopuli.com/)
+
+Analyzes the summary.json file that [turborepo](https://github.com/vercel/turbo/) outputs to help visualize the task blockers, and also reveals CPU bottlenecks (for example when the CPU is too busy to pick up a task)
+
+## [markdown table viewer](http://markdown-table.nullvoxpopuli.com/?file=https://raw.githubusercontent.com/NullVoxPopuli/disk-perf-git-and-pnpm/refs/heads/main/README.md)
+
+Renders tables present in linked markdown documents via the `?file=` query param. Provides filtering and sorting, etc
+
 ## [ember-inspector](https://ember-inspector.nullvoxpopuli.com/)
 
 Status of the latest release of ember-inspector.
