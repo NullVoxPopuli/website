@@ -9,15 +9,7 @@ overrides:
   showdown: 2.1.0
   prismjs-glimmer: ^1.1.1
 
-packageExtensionsChecksum: c5881fd7744a3a38c036ef35efdd5b31
-
-patchedDependencies:
-  broccoli-static-site-json@4.5.0:
-    hash: dcxzrgawlptlsqe6igpdtfdgzu
-    path: patches/broccoli-static-site-json@4.5.0.patch
-  ember-cli-showdown@6.0.1:
-    hash: tepukxor26vr3qefucf5rwy7ce
-    path: patches/ember-cli-showdown@6.0.1.patch
+packageExtensionsChecksum: sha256-IOv7EFPT+qFKcSb6InDfF0XQsYGW9vxftDHrlZ/sAl8=
 
 importers:
 
@@ -10685,7 +10677,7 @@ snapshots:
       rss: 1.2.2
       walk-sync: 0.3.4
 
-  broccoli-static-site-json@4.5.0(patch_hash=dcxzrgawlptlsqe6igpdtfdgzu):
+  broccoli-static-site-json@4.5.0:
     dependencies:
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 4.2.0
@@ -12097,7 +12089,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli-showdown@6.0.1(patch_hash=tepukxor26vr3qefucf5rwy7ce)(webpack@5.97.1):
+  ember-cli-showdown@6.0.1(webpack@5.97.1):
     dependencies:
       broccoli-funnel: 2.0.2
       broccoli-source: 1.1.0
@@ -12792,7 +12784,7 @@ snapshots:
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 4.2.0
       broccoli-plugin: 4.0.7
-      broccoli-static-site-json: 4.5.0(patch_hash=dcxzrgawlptlsqe6igpdtfdgzu)
+      broccoli-static-site-json: 4.5.0
       broccoli-static-site-json-xml: 1.0.1
       case: 1.6.3
       downsize-cjs: 0.1.1
@@ -12800,7 +12792,7 @@ snapshots:
       ember-body-class: 2.1.1
       ember-cli-babel: 7.26.11
       ember-cli-htmlbars: 5.7.2
-      ember-cli-showdown: 6.0.1(patch_hash=tepukxor26vr3qefucf5rwy7ce)(webpack@5.97.1)
+      ember-cli-showdown: 6.0.1(webpack@5.97.1)
       ember-cli-string-utils: 1.1.0
       ember-decorators-polyfill: 1.1.5(@babel/core@7.26.7)
       ember-get-config: 0.5.0
