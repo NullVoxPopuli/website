@@ -9,14 +9,14 @@ overrides:
   showdown: 2.1.0
   prismjs-glimmer: ^1.1.1
 
-packageExtensionsChecksum: c5881fd7744a3a38c036ef35efdd5b31
+packageExtensionsChecksum: sha256-IOv7EFPT+qFKcSb6InDfF0XQsYGW9vxftDHrlZ/sAl8=
 
 patchedDependencies:
   broccoli-static-site-json@4.5.0:
-    hash: dcxzrgawlptlsqe6igpdtfdgzu
+    hash: b6660a3ea3e3fcbf3f4b73b2626f87d686b4ca7993f580ea6a03e78fa2780f62
     path: patches/broccoli-static-site-json@4.5.0.patch
   ember-cli-showdown@6.0.1:
-    hash: tepukxor26vr3qefucf5rwy7ce
+    hash: bb846574adc3e57c2664fad19b5ae4540118de1b4e5977782cbb5d50721b5862
     path: patches/ember-cli-showdown@6.0.1.patch
 
 importers:
@@ -10732,7 +10732,7 @@ snapshots:
       rss: 1.2.2
       walk-sync: 0.3.4
 
-  broccoli-static-site-json@4.5.0(patch_hash=dcxzrgawlptlsqe6igpdtfdgzu):
+  broccoli-static-site-json@4.5.0(patch_hash=b6660a3ea3e3fcbf3f4b73b2626f87d686b4ca7993f580ea6a03e78fa2780f62):
     dependencies:
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 4.2.0
@@ -12144,7 +12144,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli-showdown@6.0.1(patch_hash=tepukxor26vr3qefucf5rwy7ce)(webpack@5.98.0):
+  ember-cli-showdown@6.0.1(patch_hash=bb846574adc3e57c2664fad19b5ae4540118de1b4e5977782cbb5d50721b5862)(webpack@5.98.0):
     dependencies:
       broccoli-funnel: 2.0.2
       broccoli-source: 1.1.0
@@ -12839,7 +12839,7 @@ snapshots:
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 4.2.0
       broccoli-plugin: 4.0.7
-      broccoli-static-site-json: 4.5.0(patch_hash=dcxzrgawlptlsqe6igpdtfdgzu)
+      broccoli-static-site-json: 4.5.0(patch_hash=b6660a3ea3e3fcbf3f4b73b2626f87d686b4ca7993f580ea6a03e78fa2780f62)
       broccoli-static-site-json-xml: 1.0.1
       case: 1.6.3
       downsize-cjs: 0.1.1
@@ -12847,7 +12847,7 @@ snapshots:
       ember-body-class: 2.1.1
       ember-cli-babel: 7.26.11
       ember-cli-htmlbars: 5.7.2
-      ember-cli-showdown: 6.0.1(patch_hash=tepukxor26vr3qefucf5rwy7ce)(webpack@5.98.0)
+      ember-cli-showdown: 6.0.1(patch_hash=bb846574adc3e57c2664fad19b5ae4540118de1b4e5977782cbb5d50721b5862)(webpack@5.98.0)
       ember-cli-string-utils: 1.1.0
       ember-decorators-polyfill: 1.1.5(@babel/core@7.26.9)
       ember-get-config: 0.5.0
