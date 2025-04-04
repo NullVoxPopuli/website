@@ -106,6 +106,14 @@ Daemon and Pidfile manager allowing you to idempotently start daemons in tooling
 
 List who maintains your dependencies.
 
+### [how-many-deps](https://github.com/NullVoxPopuli/how-many-deps)
+
+Counts how many deps you have in your (mono)repo
+
+### [are-my-build-deps-out-of-date](https://github.com/NullVoxPopuli/are-my-build-deps-out-of-date)
+
+Scans your reachable dependencies and tells you if any dependencies known to be for building / emitting javascript are out of date.
+
 ### [ember-apply](https://ember-apply.pages.dev/)
 
 Collection of monorepo management and script-aiding utilities for managing docs automation as well as codemodding and monorepo maintenance.
