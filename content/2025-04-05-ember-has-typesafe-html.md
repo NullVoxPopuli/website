@@ -20,4 +20,5 @@ tl;dr: install the pre-release version of the Glint extension and enable `@built
 For neovim, I need to PR to the built in configs to make switching to the glint ts-plugin automatic, but here is what it looks like!
 
 ![image of href completion](/images/typesafe-html/href.png)
+![image of href type error](/images/typesafe-html/href-error.png)
 ![image of aria atttribute completion](/images/typesafe-html/aria.png)
