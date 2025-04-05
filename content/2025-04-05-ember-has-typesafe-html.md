@@ -17,6 +17,8 @@ Ember has had typesafe HTML for a while now. Details on getting it set up [are h
 
 tl;dr: install the pre-release version of the Glint extension and enable `@builtin typescript`.
 
+We're using the pre-release version of Glint here because it provides a far superior editing than the currently released stable version of Glint. Glint V2 is powered by [Volar](https://volarjs.dev/) and lines up nicely with the [Polaris](https://emberjs.com/editions/polaris/) efforts to align with broader ecosystem tooling in a way that unblocks all experimentation while also still supporting older code so that large codebase have a path to the modern tooling and DX.
+
 For neovim, I need to PR to the built in configs to make switching to the glint ts-plugin automatic, but here is what it looks like!
 
 ![image of href completion](/images/typesafe-html/href.png)
