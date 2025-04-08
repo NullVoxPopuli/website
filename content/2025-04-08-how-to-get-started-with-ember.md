@@ -43,11 +43,7 @@ _The goal is for the framework to stay out of your way_. If you feel any resista
 * Guided documentation:
     * Guides on many topics for developing apps on [the official website](https://guides.emberjs.com/release/components/)
 
-
-
-If you want to take a step back and learn things how the framework has organized, you may want to start on this page:
-
-* https://emberjs.com/learn/ 
+If you want to take a step back and learn things how the framework has organized, you may want to start on this page: [The official Learn Ember](https://emberjs.com/learn/ ) page.
 
 ## Once you have some familiarity 
 
