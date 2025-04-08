@@ -27,21 +27,21 @@ _The goal is for the framework to stay out of your way_. If you feel any resista
 ## Where to get started
 
 * Already know another framework?
-  * Compare component-patterns between Ember Polaris and other frameworks 
-    * [React](https://component-party.dev/compare/emberPolaris-vs-react), [Solid](https://component-party.dev/compare/emberPolaris-vs-solid), 
-    * [Vue 3](https://component-party.dev/compare/emberPolaris-vs-vue3), [Vue 2](https://component-party.dev/compare/emberPolaris-vs-vue2)
-    * [Svelte 5](https://component-party.dev/compare/emberPolaris-vs-svelte5), [Svelte 4](https://component-party.dev/compare/emberPolaris-vs-svelte4)
-    * [Lit](https://component-party.dev/compare/emberPolaris-vs-lit)
-    * [Angular Renaissance](https://component-party.dev/compare/emberPolaris-vs-angularRenaissance), [Angular](https://component-party.dev/compare/emberPolaris-vs-angular)
-    * [Ember Octane](https://component-party.dev/compare/emberPolaris-vs-emberOctane)
+    * Compare component-patterns between Ember Polaris and other frameworks 
+        * [React](https://component-party.dev/compare/emberPolaris-vs-react), [Solid](https://component-party.dev/compare/emberPolaris-vs-solid), 
+        * [Vue 3](https://component-party.dev/compare/emberPolaris-vs-vue3), [Vue 2](https://component-party.dev/compare/emberPolaris-vs-vue2)
+        * [Svelte 5](https://component-party.dev/compare/emberPolaris-vs-svelte5), [Svelte 4](https://component-party.dev/compare/emberPolaris-vs-svelte4)
+        * [Lit](https://component-party.dev/compare/emberPolaris-vs-lit)
+        * [Angular Renaissance](https://component-party.dev/compare/emberPolaris-vs-angularRenaissance), [Angular](https://component-party.dev/compare/emberPolaris-vs-angular)
+        * [Ember Octane](https://component-party.dev/compare/emberPolaris-vs-emberOctane)
 * Tutorials
-  * how-to and interactive guide: https://tutorial.glimdown.com/ 
-  * full and official tutorial and walkthrough, which guides you through building a real application: https://guides.emberjs.com/release/tutorial/part-1/ 
+    * how-to and [interactive guide](https://tutorial.glimdown.com/)
+    * full and [official tutorial and walkthrough](https://guides.emberjs.com/release/tutorial/part-1/), which guides you through building a real application 
 * AI Chat
-  * There is a custom GPT in the ChatGPT marketplace trained on ember knowledge https://chatgpt.com/g/g-NlX2z2g6H-ember-assistant — it’s able to convert between frameworks, so if you don’t like tutorials or prefer to learn by trial and error, you may want to start here.
+    * There is a [custom GPT in the ChatGPT marketplace](https://chatgpt.com/g/g-NlX2z2g6H-ember-assistant)     trained on ember knowledge - it’s able to convert between frameworks, so if you don’t like tutorials or prefer to learn by trial and error, you may want to start here.
 (It’s important to use this over general trained AI, this custom GPT has been told to favor newer patterns instead of older patterns)
 * Guided documentation:
-  * Guides on many topics for developing apps https://guides.emberjs.com/release/components/ 
+    * Guides on many topics for developing apps on [the official website](https://guides.emberjs.com/release/components/)
 
 
 
@@ -52,16 +52,16 @@ If you want to take a step back and learn things how the framework has organized
 ## Once you have some familiarity 
 
 * Reference documentation
-  * Runtime Framework APIs: https://api.emberjs.com/ember/release 
-  * Data / warp-drive APIs: https://api.emberjs.com/ember-data/release/modules/ember-data-overview?show=inherited
-    * Newer concepts: https://github.com/emberjs/data/tree/main/guides 
+    * [Runtime Framework APIs](https://api.emberjs.com/ember/release)
+    * [Data / warp-drive APIs](https://api.emberjs.com/ember-data/release/modules/ember-data-overview?show=inherited)
+        * [Newer concepts](https://github.com/emberjs/data/tree/main/guides) 
 
 
 * Messin’ around
-  * [Online REPL](https://limber.glimdown.com/edit?c=JYWwDg9gTgLgBAYQuCA7Apq%2BAzKy4DkAAgOYA2oI6UA9AMbKQZYEDcAUKJLHAN5wwoAQzoBrdABM4AXzi58xcpWo1BI0cFQk2nFD35oZcvCEJF0IAEYqQECcGzBqO9ugAe3eBPTYhAVzJ4OjIhAGdQuAARCwg4dxhMCQikFGZ4XnY4OCI1MUk4AH0GPyw4AF44AAYOTLgSdCCIEpgACgBKPlqssgbjZABlGGghevK4MCEoUPQASSwWsgg6ITJB4fqAOnqYGYSQFoJiljaOgH5Tqo4srKgGvyhUAQALYFCNoqbSgB8vvpA14SjH6XWrSWrTRrNFoANxWfnQHQy1zgi2WqyGgPQGwhuwsByOMAIABo4LCyPC4Ocqm0rtcYC83h9mmMyfDaWDapo6LcqKUKu1ygA%2BZ6vDYEuAAagqAEYalkADx7MAhBKCrpweVgQUATSacCeQmh6DgwWAeSk9ONlj8MCGj14vHpooJ0lkMFA6De8poWvY6vl1tthhgAE8wOgygAiQN2yN8XiGSOmsRxp1vLk8zAwV2ChAUMTemNoNUK1QWZVCVXsMFAA&format=gjs) - fast way to “just try stuff”
-  * Stackblitz - a little slower due to running a whole dev environment in your browser, but most like the local dev experience for default ember apps.
-    * [Ember (JavaScript)](https://stackblitz.com/fork/github/ember-cli/editor-output/tree/stackblitz-app-output?title=Ember%20Starter)
-    * [Ember (TypeScript)](https://stackblitz.com/fork/github/ember-cli/editor-output/tree/stackblitz-app-output-typescript?title=Ember%20TypeScript%20Starter)
+    * [Online REPL](https://limber.glimdown.com/edit?c=JYWwDg9gTgLgBAYQuCA7Apq%2BAzKy4DkAAgOYA2oI6UA9AMbKQZYEDcAUKJLHAN5wwoAQzoBrdABM4AXzi58xcpWo1BI0cFQk2nFD35oZcvCEJF0IAEYqQECcGzBqO9ugAe3eBPTYhAVzJ4OjIhAGdQuAARCwg4dxhMCQikFGZ4XnY4OCI1MUk4AH0GPyw4AF44AAYOTLgSdCCIEpgACgBKPlqssgbjZABlGGghevK4MCEoUPQASSwWsgg6ITJB4fqAOnqYGYSQFoJiljaOgH5Tqo4srKgGvyhUAQALYFCNoqbSgB8vvpA14SjH6XWrSWrTRrNFoANxWfnQHQy1zgi2WqyGgPQGwhuwsByOMAIABo4LCyPC4Ocqm0rtcYC83h9mmMyfDaWDapo6LcqKUKu1ygA%2BZ6vDYEuAAagqAEYalkADx7MAhBKCrpweVgQUATSacCeQmh6DgwWAeSk9ONlj8MCGj14vHpooJ0lkMFA6De8poWvY6vl1tthhgAE8wOgygAiQN2yN8XiGSOmsRxp1vLk8zAwV2ChAUMTemNoNUK1QWZVCVXsMFAA&format=gjs) - fast way to “just try stuff”
+    * Stackblitz - a little slower due to running a whole dev environment in your browser, but most like the local dev experience for default ember apps.
+        * [Ember (JavaScript)](https://stackblitz.com/fork/github/ember-cli/editor-output/tree/stackblitz-app-output?title=Ember%20Starter)
+        * [Ember (TypeScript)](https://stackblitz.com/fork/github/ember-cli/editor-output/tree/stackblitz-app-output-typescript?title=Ember%20TypeScript%20Starter)
 
 ## Vocab
 
