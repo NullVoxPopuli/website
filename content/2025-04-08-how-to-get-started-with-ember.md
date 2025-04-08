@@ -65,12 +65,11 @@ If you want to take a step back and learn things how the framework has organized
 
 ## Vocab
 
-* _vite_ - https://vite.dev/ - the build tool we use — which has many contributors and is leading the JavaScript ecosystem in local build performance
-* _embroider_ - the set of tools we use for adapting pre-spec JS to spec-compliant JavaScript 
-project here: https://github.com/embroider-build/embroider/ 
+* [_vite_](https://vite.dev/) - the build tool we use — which has many contributors and is leading the JavaScript ecosystem in local build performance
+* [_embroider_](https://github.com/embroider-build/embroider/) - the set of tools we use for adapting pre-spec JS to spec-compliant JavaScript  
 This is what enables our > 10 year old, multi-million line project to run in vite without a major migration / rewrite, enabling parallel shipping and maintenance.
 * _tracked properties_ - what ember calls its wrapper around Signals.  
 * _addon_ - alias for “library” 
-* _webpack_ - older and slower build tool that we’re migrating away from (or will already have migrated away from by the time you read this)
+* [_webpack_](https://webpack.js.org/) - older and slower build tool that we’re migrating away from (or will already have migrated away from by the time you read this)
 * _broccoli_ - older and slower build tool that we’re migrating away from (or will already have migrated away from by the time you read this)
 
