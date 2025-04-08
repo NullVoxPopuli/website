@@ -20,9 +20,9 @@ For questions / concerns / updates, feel free to ask in:
 * The [Official Ember Discord](https://discord.gg/emberjs)
 * My [Personal Discord](http://discord.gg/cTvtmJhFNY)
 
-While you may use ember for your frontend application, most of the code you will encounter is non-ember aka “just javascript”. Learning ember will allow you to quickly get to shipping or debugging features for non-company-specific problems.
+_While you may use ember for your frontend application, most of the code you will encounter is non-ember aka “just javascript”. Learning ember will allow you to quickly get to shipping or debugging features for non-company-specific problems._
 
-The goal is for the framework to stay out of your way. If you feel any resistance to doing your work, regardless of the cause, please let me know.
+_The goal is for the framework to stay out of your way_. If you feel any resistance to doing your work, **regardless of the cause**, please let me know.
 
 ## Where to get started
 
