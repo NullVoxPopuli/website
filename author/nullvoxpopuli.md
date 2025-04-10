@@ -12,4 +12,4 @@ facebook:
 location: United States
 ---
 
-Link Tree: https://linktr.ee/nullvoxpopuli
+[Links & Socials](https://nullvoxpopuli.com/page/links)
