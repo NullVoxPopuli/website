@@ -12,4 +12,4 @@ facebook:
 location: United States
 ---
 
-[Links & Socials](https://nullvoxpopuli.com/page/links)
+<a href="/page/links">Links &amp; Socials</a>
