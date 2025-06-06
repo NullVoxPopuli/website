@@ -155,7 +155,7 @@ And to help build design systems _even_ faster, there a number of libraries that
 UI Primitives:
   - [ember-sortable](https://emberobserver.com/addons/ember-sortable) - primitives for sorting, drag & drop
   - [ember-primitives](https://ember-primitives.pages.dev/) - Styleless, Accessibility-focused primitives that help you build faster UIs. Not just components, but light/dark mode management, popover management, etc.
-  - [ember-headless-table](https://github.com/CrowdStrike/ember-headless-table) - a plugin-based styleless way of building complex table UIs with sorting, column-reordering, etc
+  - [@universal-ember/table](https://github.com/universal-ember/table) - a plugin-based styleless way of building complex table UIs with sorting, column-reordering, etc
   - [ember-headless-form](https://github.com/CrowdStrike/ember-headless-form) - an Accessibility-focused way of taking the boilerplate out of highly-managed form experiences, including local errors, server errors, etc -- giving you the primitives, to expose powerful design-system forms with a great pit of success .
   - [ember-focus-trap](https://emberobserver.com/addons/ember-focus-trap) - element modifier for trapping focus within the element.
 
