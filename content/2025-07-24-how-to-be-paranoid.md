@@ -1,5 +1,5 @@
 ---
-title: How to Be Paranoid
+title: How to be Paranoid
 image: /images/photo-1647424824945-d7d22200ac39.avif
 imageMeta:
   attribution: "Caitlin Taylor"
