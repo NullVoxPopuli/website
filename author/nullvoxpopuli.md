@@ -12,4 +12,4 @@ facebook:
 location: United States
 ---
 
-<a href="/page/links">Links &amp; Socials</a>
+
