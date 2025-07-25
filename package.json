@@ -13,11 +13,13 @@
   "scripts": {
     "prepare:safe": "cd node_modules/sharp && pnpm install && pnpm run install",
     "build": "ember build --environment=production",
+    "format": "prettier . --write",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
+    "lint:prettier": "prettier . --check",
     "lint:js:fix": "eslint . --fix",
     "start": "FASTBOOT_DISABLED=true ember serve",
     "test:ember": "ember test",
