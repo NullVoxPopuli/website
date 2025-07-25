@@ -53,7 +53,8 @@ So I had to do the heavy-handed investigative process:
 - I suspected that if me as an attacker in the try-hardest mode I could think of potentially wouldn't even use node
 - Rebooting the computer would ensure that anything that began running would be stopped (be that a node process or otherwise)
 - However, if there is malicious code disguising itself, it's potentially possible it started up again at login
-    - There is where code-signing comes in to play -- applications that are not signed by a central authority do not have permission to install themselves and start up.
+    - This is where code-signing comes in to play -- applications that are not signed by a central authority do not have permission to install themselves and start up.
+      (But short of having a machine with signing, you'd then need to inspect your network activity... which is involved)
 
 
 When I started the computers back up again, I was ready to investigate the signatures of all the running binaries -- but then I found out the attack was only for windows machines (after confirming with 10+ well known security sources) -- and... I just stopped -- I didn't need to do all this work.
