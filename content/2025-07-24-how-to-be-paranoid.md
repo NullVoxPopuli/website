@@ -13,14 +13,14 @@ tags:
   - javascript
 ---
 
-How do you _trust_ that your macihne is safe?
+How do you _trust_ that your machine is safe?
 
 If we don't have exact [Indicators of Compromise](https://www.crowdstrike.com/en-us/blog/crowdstrike-falcon-prevents-npm-package-supply-chain-attacks/), what do we need to check for?
 
-Initially, when I found out about  [CVE-2025-54313](https://nvd.nist.gov/vuln/detail/CVE-2025-54313) / [GHSA-f29h-pxvx-f335](https://github.com/advisories/GHSA-f29h-pxvx-f335), or _any_ vulnernability, I have to decide if there is, beyond a shadow of a doubt, sufficient evidence to do nothing, else, I have to do a bunch of key-rolling -- which takes about 15 minutes on my personal hardware, and an hour and a half on work hardware (due to MacOS being way slower than linux).
+Initially, when I found out about  [CVE-2025-54313](https://nvd.nist.gov/vuln/detail/CVE-2025-54313) / [GHSA-f29h-pxvx-f335](https://github.com/advisories/GHSA-f29h-pxvx-f335), or _any_ vulnerability, I have to decide if there is, beyond a shadow of a doubt, sufficient evidence to do nothing, else, I have to do a bunch of key-rolling -- which takes about 15 minutes on my personal hardware, and an hour and a half on work hardware (due to MacOS being way slower than linux).
 
 
-In this case, the day prior, I was doing a lot of open source development for a library that my employer makes heavy use of, and noticed that my pull requset was conflicting with `main` frequently due to [renovate](https://github.com/renovatebot/renovate) running _very eagerly_ on dependency updates. I needed the repo's CI to run all the scenarios for me, because enumerating all the tested / supported scenarios without knowing where errors exist is time consuming and cumbersome -- and GitHub does not run CI for pull requsets if there is a conflict. So I was regularly rebasing.
+In this case, the day prior, I was doing a lot of open source development for a library that my employer makes heavy use of, and noticed that my pull request was conflicting with `main` frequently due to [renovate](https://github.com/renovatebot/renovate) running _very eagerly_ on dependency updates. I needed the repo's CI to run all the scenarios for me, because enumerating all the tested / supported scenarios without knowing where errors exist is time consuming and cumbersome -- and GitHub does not run CI for pull request if there is a conflict. So I was regularly rebasing.
 
 Normally this isn't a big deal, but I just _didn't know_ -- which is not an acceptable state to be in to "decide to do nothing". 
 
@@ -52,7 +52,7 @@ So I had to do the heavy-handed investigative process:
     - Delete global cache directories: `rm -rf ~/.pnpm-store`, or `pnpm store prune`, for example.
 - I suspected that if me as an attacker in the try-hardest mode I could think of potentially wouldn't even use node
 - Rebooting the computer would ensure that anything that began running would be stopped (be that a node process or otherwise)
-- However, if there is malicious code disquising itself, it's potentially possible it started up again at login
+- However, if there is malicious code disguising itself, it's potentially possible it started up again at login
     - There is where code-signing comes in to play -- applications that are not signed by a central authority do not have permission to install themselves and start up.
 
 
