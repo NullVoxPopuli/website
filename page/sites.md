@@ -122,5 +122,5 @@ Collection of monorepo management and script-aiding utilities for managing docs 
 ## Vibe Coded Toy Projects
 
 - Ports
-  - React -> Ember
-    - Game: [ExponenTile](https://nullvoxpopuli.github.io/ExponenTile/) -- [code](https://github.com/NullVoxPopuli/ExponenTile) 
+    - React to Ember
+        - Game: [ExponenTile](https://nullvoxpopuli.github.io/ExponenTile/) -- [code](https://github.com/NullVoxPopuli/ExponenTile) 
