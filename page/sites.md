@@ -117,3 +117,10 @@ Scans your reachable dependencies and tells you if any dependencies known to be 
 ### [ember-apply](https://ember-apply.pages.dev/)
 
 Collection of monorepo management and script-aiding utilities for managing docs automation as well as codemodding and monorepo maintenance.
+
+
+## Vibe Coded Toy Projects
+
+- Ports
+  - React -> Ember
+    - Game: [ExponenTile](https://nullvoxpopuli.github.io/ExponenTile/) -- [code](https://github.com/NullVoxPopuli/ExponenTile) 
