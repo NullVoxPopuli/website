@@ -93,6 +93,16 @@ Lastly, there is the "Needs Work" category, which is to concisely say that the d
     This design system from [IBM](https://www.ibm.com/) is one of the more modern codebases, though, in poking around their documentation, I found a few CSS bugs. 
     They use TypeScript, gjs/gts, and the V2 Addon (native library) format.
 
+- [shadcn-ember](https://github.com/IgnaceMaes/shadcn-ember) » [Docs](https://shadcn-ember.com/) | [npm](https://www.npmjs.com/package/shadcn-ember)
+
+    ![screenshot of shadcn-ember](/images/design-systems/shadcn-ember.png)
+
+    ```bash
+    npx shadcn-ember@latest init
+    ```
+
+    This design system from [Ignace Maes](https://github.com/IgnaceMaes) is an Ember port of [shadcn/ui](https://ui.shadcn.com/). It uses a CLI to copy beautifully designed, accessible components directly into your project for full customization. Built with TypeScript, gts, and Tailwind CSS v4.
+
 ## Pre-Polaris 
 
 - [Helios](https://github.com/hashicorp/design-system) » [Docs](https://helios.hashicorp.design/) | [npm](https://www.npmjs.com/package/@hashicorp/design-system-components)
