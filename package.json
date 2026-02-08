@@ -78,7 +78,7 @@
   "dependencies": {
     "@ember/render-modifiers": "^3.0.0",
     "@ember/string": "^4.0.0",
-    "@glimmer/component": "1.1.2",
+    "@glimmer/component": "2.0.0",
     "@glimmer/tracking": "1.1.2",
     "ember-prism": "^1.0.0",
     "prismjs-glimmer": "^1.1.1",
