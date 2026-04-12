@@ -33,7 +33,7 @@ jobs:
       deployments: write
 
     steps:
-      - uses: wyvox/action@v1
+      - uses: wyvox/action@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm build
