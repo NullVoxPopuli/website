@@ -38,6 +38,10 @@ Analyzes the summary.json file that [turborepo](https://github.com/vercel/turbo/
 
 Renders tables present in linked markdown documents via the `?file=` query param. Provides filtering and sorting, etc
 
+## [graph visualizer](https://graph.nullvoxpopuli.com/)
+
+Renders directed graphs, shows cycles, handles (very) large graphs -- used while exploring / debugging cycles in large monorepos
+
 ## [ember-inspector](https://ember-inspector.nullvoxpopuli.com/)
 
 Status of the latest release of ember-inspector.
