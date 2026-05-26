@@ -103,8 +103,6 @@ Lastly, there is the "Needs Work" category, which is to concisely say that the d
 
     This design system from [Ignace Maes](https://github.com/IgnaceMaes) is an Ember port of [shadcn/ui](https://ui.shadcn.com/). It uses a CLI to copy beautifully designed, accessible components directly into your project for full customization. Built with TypeScript, gts, and Tailwind CSS v4.
 
-## Pre-Polaris 
-
 - [Helios](https://github.com/hashicorp/design-system) » [Docs](https://helios.hashicorp.design/) | [npm](https://www.npmjs.com/package/@hashicorp/design-system-components)
 
     ![screenshot of Helios](/images/design-systems/helios.png)
@@ -114,7 +112,6 @@ Lastly, there is the "Needs Work" category, which is to concisely say that the d
     ```
 
     Helios is a design system by [Hashicorp](https://www.hashicorp.com/), so it is well funded and maintained, as well as made with influence from accessibility experts.
-    However, my main critique is that it does not use the `gjs` or `gts` file format, making this design system "Pre-Polaris".
 
 ## Needs Work 
 
@@ -187,7 +184,8 @@ Testing and Documentation:
 
 Build Tools:
 
-  - [@responsive-image/ember](https://emberobserver.com/addons/@responsive-image/ember) automatically create responsive optimized images and fast page loads -- part of [responsive-image](https://github.com/simonihmig/responsive-image) 
+  - [@responsive-image/ember](https://emberobserver.com/addons/@responsive-image/ember) automatically create responsive optimized images and fast page loads -- part of [responsive-image](https://github.com/simonihmig/responsive-image)
+  - [svg-jar](https://github.com/svg-jar/plugin/blob/main/plugin/README.md) automatically `<use>` SVGs in rollup and vite
 
 
 Other:
