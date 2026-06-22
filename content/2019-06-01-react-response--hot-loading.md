@@ -63,7 +63,9 @@ While the generate component command gives you 3 files, you don't _need_ each of
 
 
 in `app/templates/components/greeting.hbs`, we'll type out a little template that says Hello to whatever name we pass in. We can ignore the greeting.js and greeting-test.js files for now.
-```handlebars
+
+```handlebars{data-filename="app/templates/components/greeting.hbs" data-diff="-1,+2,+3,+4"}
+{{yield}}
 <div class='greeting'>
   Hello, {{@name}}!
 </div>
