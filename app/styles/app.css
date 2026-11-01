@@ -287,6 +287,10 @@
       margin-bottom: 1.25rem;
     }
 
+    .author img {
+      width: 4.5rem;
+    }
+
     .post-nav {
       flex-direction: column;
       gap: 0.75rem;
