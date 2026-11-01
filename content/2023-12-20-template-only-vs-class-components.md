@@ -174,7 +174,7 @@ And the table of the results here:
   .results__table button {
     padding: 0;
     border: none;
-    color: blue;
+    color: var(--link);
     display: block;
     background-color: unset;
   }

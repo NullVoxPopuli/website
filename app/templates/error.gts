@@ -6,5 +6,5 @@ import { pageTitle } from "ember-page-title";
   {{pageTitle "Not found"}}
 
   <h1>Not found</h1>
-  <p>There is nothing at this address. <LinkTo @route="index">See all posts</LinkTo>.</p>
+  <p>This strain went extinct. <LinkTo @route="index">See all posts</LinkTo>.</p>
 </template>
