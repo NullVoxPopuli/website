@@ -38,13 +38,16 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm build
       - run: pnpm ember build --environment production
-      - name: Publish ${{ matrix.app.id }}
-        uses: cloudflare/pages-action@v1.5.0
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ matrix.app.cloudflareName }}
-          directory: ${{ matrix.app.path }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-
-
+      - name: Publish ${{ matrix.app.name }}
+        working-directory: ${{ matrix.app.path }}
+        run: |
+          npx wrangler pages deploy ./ \
+            --project-name="$PROJECT_NAME" \
+            --branch="$BRANCH" \
+            --commit-hash="$HEAD_SHA"
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PROJECT_NAME: ${{ matrix.app.cloudflareName }}
+          BRANCH: ${{ github.ref_name }}
+          HEAD_SHA: ${{ github.sha }}
