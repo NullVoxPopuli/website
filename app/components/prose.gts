@@ -1,4 +1,3 @@
-import { on } from "@ember/modifier";
 import { htmlSafe } from "@ember/template";
 
 import type { TOC } from "@ember/component/template-only";
