@@ -145,24 +145,6 @@
     text-decoration: none;
   }
 
-  .site-mark-pupil {
-    fill: #f1e9f5;
-    transform-origin: 16px 16px;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .site-mark-pupil {
-      animation: pulse 5s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      50% {
-        opacity: 0.55;
-        transform: scaleX(0.55);
-      }
-    }
-  }
-
   .site-description {
     color: var(--muted);
     font-size: 1rem;
