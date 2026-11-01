@@ -81,7 +81,8 @@ Inside of `app/templates/application.hbs`, the entrypoint to rendering our appli
 A note about the syntax used here, if coming from React, or any other ecosystem, the `@` used when invoking a component signifies that the key-value pair is an argument, and not an attribute, such as `class` or `data-test` would be. This allows for some nice API design when building UI components where you want to give control of attribute values to the caller. For more information on this, see [@pzuraq](https://twitter.com/pzuraq)'s blog post on [Angle Brackets and Named Arguments](https://www.pzuraq.com/coming-soon-in-ember-octane-part-2-angle-brackets-and-named-arguments/)
 
 
-<span id='hmr' />
+<span id='hmr'></span>
+
 ## Hot module replacement
 
 There is a package called [ember-ast-hot-load](https://github.com/lifeart/ember-ast-hot-load) which will do all of the hot module replacement for us. This enables us to maintain the greater application state while we work on individual components. We don't need to wait for the entire app to rebuild, or the page to refresh. This greatly benefits our development feedback loop by reducing wait time.

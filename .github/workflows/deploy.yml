@@ -37,7 +37,6 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: pnpm build
-      - run: pnpm ember build --environment production
       - name: Publish ${{ matrix.app.name }}
         working-directory: ${{ matrix.app.path }}
         run: |
