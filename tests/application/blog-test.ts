@@ -28,6 +28,13 @@ module("Application | blog", function (hooks) {
     assert.dom(".code-block button.copy").exists();
   });
 
+  test("the cover image offers smaller sizes", async function (assert) {
+    await visit("/2024-04-24-signals");
+
+    assert.dom(".post-image picture source[type='image/webp']").hasAttribute("srcset", /480w/);
+    assert.dom(".post-image img").hasAttribute("alt", "");
+  });
+
   test("footnotes link to their definition", async function (assert) {
     await visit("/2024-04-24-signals");
 

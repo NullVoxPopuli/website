@@ -1,3 +1,5 @@
+import type { ImageData } from "@responsive-image/core";
+
 export interface Post {
   id: string;
   title: string;
@@ -48,6 +50,18 @@ function loadHtml(loaders: Loaders, dir: string, id: string) {
 const postBodies = import.meta.glob("/content/*.md", { import: "default" }) as Loaders;
 const pageBodies = import.meta.glob("/page/*.md", { import: "default" }) as Loaders;
 
+/**
+ * These stay in public/, so that the URLs in the feed and in link previews do not change.
+ */
+const covers = import.meta.glob<ImageData>("/public/images/*.{jpg,jpeg,avif,webp}", {
+  query: "?responsive",
+  import: "default",
+});
+
+function loadCover(image?: string) {
+  return image ? covers[`/public${image}`]?.() : undefined;
+}
+
 const postsById = byId(
   import.meta.glob<Post>("/content/*.md", { query: "?meta", import: "default", eager: true }),
 );
@@ -84,6 +98,7 @@ export async function loadPost(id: string) {
 
   return {
     post,
+    cover: await loadCover(post.image),
     html: await loadHtml(postBodies, "content", id),
     newer: posts[index - 1],
     older: posts[index + 1],

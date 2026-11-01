@@ -28,6 +28,12 @@ test("pre-rendered posts have a title and meta tags", () => {
   );
 });
 
+test("cover images are pre-rendered with each size", () => {
+  const html = read("2023-12-19-hifi-sourcemap/index.html");
+
+  assert.match(html, /<picture[\s\S]*image\/webp[\s\S]*480w[\s\S]*768w[\s\S]*1408w/);
+});
+
 test("the feed keeps the permalinks of each post", () => {
   const rss = read("rss.xml");
   const posts = listRoutes(root).filter((route) => /^\d{4}-|^avoiding/.test(route));

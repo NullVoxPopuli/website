@@ -1,5 +1,6 @@
 import { LinkTo } from "@ember/routing";
 
+import { ResponsiveImage } from "@responsive-image/ember";
 import { pageTitle } from "ember-page-title";
 
 import { authorFor, type loadPost, tagFor } from "#app/content.ts";
@@ -37,9 +38,15 @@ const Template: TOC<{ Args: { model: Awaited<ReturnType<typeof loadPost>> } }> =
         </p>
       </header>
 
-      {{#if post.image}}
+      {{#if @model.cover}}
         <figure class="post-image">
-          <img src={{post.image}} alt="" />
+          <ResponsiveImage
+            @src={{@model.cover}}
+            @sizes="(min-width: 44rem) 44rem, 100vw"
+            alt=""
+            loading="eager"
+            fetchpriority="high"
+          />
           {{#if post.imageMeta.attribution}}
             <figcaption>
               Photo by
