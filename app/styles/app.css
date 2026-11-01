@@ -1,4 +1,4 @@
-@layer base, prose;
+@layer base, prose, narrow;
 
 @layer base {
   :root {
@@ -48,6 +48,10 @@
     text-wrap: balance;
   }
 
+  h1 {
+    font-size: clamp(1.6rem, 6vw, 2.1rem);
+  }
+
   time,
   .post-meta,
   figcaption {
@@ -85,6 +89,8 @@
 
   .post-list {
     display: grid;
+    /* A long word in an excerpt must not widen the column */
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
     padding: 0;
     list-style: none;
@@ -110,7 +116,6 @@
 
   .post-header h1 {
     margin-bottom: 0.25rem;
-    font-size: 2.1rem;
   }
 
   .post-meta {
@@ -160,7 +165,12 @@
   }
 
   .author img {
+    flex: none;
     border-radius: 50%;
+  }
+
+  .author div {
+    min-width: 0;
   }
 
   .author h1 {
@@ -236,6 +246,24 @@
     cursor: pointer;
   }
 
+  @media (hover: hover) {
+    .copy {
+      opacity: 0;
+    }
+
+    .code-block:hover .copy,
+    .copy:focus-visible {
+      opacity: 1;
+    }
+  }
+
+  /* Without hover the button is always visible, and must not cover the first line */
+  @media (hover: none) {
+    .prose pre {
+      padding-block-start: 2.5rem;
+    }
+  }
+
   .heading-link {
     margin-inline-start: 0.4rem;
     color: var(--muted);
@@ -245,5 +273,47 @@
 
   :is(h1, h2, h3, h4, h5, h6):hover > .heading-link {
     opacity: 1;
+  }
+}
+
+@layer narrow {
+  @media (width < 40rem) {
+    body {
+      padding: 1rem 1rem 3rem;
+      font-size: 1rem;
+    }
+
+    .site-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .post-nav {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .post-nav a:only-child:last-child {
+      margin-left: 0;
+    }
+
+    .prose :is(ul, ol) {
+      padding-inline-start: 1.25rem;
+    }
+
+    /* Code gets the full width of the screen */
+    .code-block {
+      margin-inline: -1rem;
+    }
+
+    .prose pre {
+      padding-inline: 1rem;
+      border-inline: 0;
+      border-radius: 0;
+      font-size: 0.8125rem;
+    }
+
+    .copy {
+      right: 1rem;
+    }
   }
 }
