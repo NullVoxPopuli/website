@@ -1,26 +1,25 @@
-# unconventional js
-/blueprints/*/files/
-/vendor/
+# unconventionally formatted files
+/.changeset
 
 # compiled output
 /dist/
 /tmp/
 
 # dependencies
-/bower_components/
 /node_modules/
 
+# lockfiles
+pnpm-lock.yaml
+package-lock.json
+
 # misc
-/coverage/
-!.*
-.eslintcache
-*.yml
-*.yaml
+/.env*
+/.vite/
+/.pnp*
+.pnp.*
+
+# written by hand, or by tools
+*.md
 *.html
 *.json
-*.md
-
-# ember-try
-/.node_modules.ember-try/
-/bower.json.ember-try
-/package.json.ember-try
+*.yml

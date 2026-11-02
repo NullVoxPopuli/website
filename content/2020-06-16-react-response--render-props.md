@@ -24,7 +24,8 @@ My hope for this series is only two things:
  - Improve the perception of Ember with respect to modern features and behavior
  - Show how conventions and architectural patterns can make everyone's lives easier.
 
-<span id='render-props-begin' />
+<span id='render-props-begin'></span>
+
 Rather than a response to a particular blog featuring React, this is more of a demonstration of correlating design patterns between the two ecosystems. Thanks to [@vlascik](https://twitter.com/vlascik/status/1134686913875664898) for the suggestion to cover React's render props pattern.
 
 First, let's clarify what a render prop is for those who may not be familiar with the term. According to the [React Documentation](https://reactjs.org/docs/render-props.html):
