@@ -32,6 +32,9 @@ importers:
       ember-source:
         specifier: ~7.3.0
         version: 7.3.1(@glimmer/component@2.2.1)
+      reactiveweb:
+        specifier: ^1.9.4
+        version: 1.9.4(@babel/core@7.29.7)(@ember/test-waiters@4.1.2)(@glimmer/component@2.2.1)(@glint/template@1.11.1)
     devDependencies:
       '@babel/core':
         specifier: ^7.29.7
@@ -2678,6 +2681,17 @@ packages:
       '@ember/test-helpers': '>=3.0.3'
       qunit: ^2.13.0 || ^3.0.0
 
+  ember-resources@7.1.0:
+    resolution: {integrity: sha512-3Pt/bhXeG6ACHgsDi03R00BH29Tso4j08yFNnQB/h/SZr06zjByQdatlB1YmCI0ebRDU1Z0wZA6c3EtiSQKkkA==}
+    peerDependencies:
+      '@glimmer/component': '>= 1.1.2 || >= 2.0.0'
+      '@glint/template': '>= 1.0.0'
+    peerDependenciesMeta:
+      '@glimmer/component':
+        optional: true
+      '@glint/template':
+        optional: true
+
   ember-rfc176-data@0.3.18:
     resolution: {integrity: sha512-JtuLoYGSjay1W3MQAxt3eINWXNYYQliK90tLwtb8aeCuQK8zKGCRbBodVIrkcTqshULMnRuTOS6t1P7oQk3g6Q==}
 
@@ -4372,6 +4386,11 @@ packages:
   raw-body@2.5.3:
     resolution: {integrity: sha512-s4VSOf6yN0rvbRZGxs8Om5CWj6seneMwK3oDb4lWDH0UPhWcxwOWw5+qk24bxq87szX1ydrwylIOp2uG1ojUpA==}
     engines: {node: '>= 0.8'}
+
+  reactiveweb@1.9.4:
+    resolution: {integrity: sha512-t0a4uIDCQ8/Mo+dv48ZLXlH83yDOCz1UaqEjS4kZcaipyLVuxFhDH5ox2s3Q1Mp+BTWoPslsJvSkoOXN8wcSMA==}
+    peerDependencies:
+      '@ember/test-waiters': '>= 3.1.0'
 
   readable-stream@1.0.34:
     resolution: {integrity: sha512-ok1qVCJuRkNmvebYikljxJA/UEsKwLl2nI1OmaqAu4/UE+h0wKCHok4XkL/gvi39OacXvw59RJUOFUkDib2rHg==}
@@ -7976,6 +7995,13 @@ snapshots:
       qunit: 2.26.0
       qunit-theme-ember: 1.0.0
 
+  ember-resources@7.1.0(@glimmer/component@2.2.1)(@glint/template@1.11.1):
+    dependencies:
+      '@embroider/addon-shim': 1.11.0
+    optionalDependencies:
+      '@glimmer/component': 2.2.1
+      '@glint/template': 1.11.1
+
   ember-rfc176-data@0.3.18: {}
 
   ember-router-generator@2.0.0:
@@ -10105,6 +10131,17 @@ snapshots:
       http-errors: 2.0.1
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+
+  reactiveweb@1.9.4(@babel/core@7.29.7)(@ember/test-waiters@4.1.2)(@glimmer/component@2.2.1)(@glint/template@1.11.1):
+    dependencies:
+      '@ember/test-waiters': 4.1.2
+      '@embroider/addon-shim': 1.11.0
+      decorator-transforms: 2.4.0(@babel/core@7.29.7)
+      ember-resources: 7.1.0(@glimmer/component@2.2.1)(@glint/template@1.11.1)
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@glimmer/component'
+      - '@glint/template'
 
   readable-stream@1.0.34:
     dependencies:

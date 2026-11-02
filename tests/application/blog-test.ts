@@ -42,6 +42,13 @@ module("Application | blog", function (hooks) {
     assert.dom(".prose sup a[data-footnote-ref]").exists();
   });
 
+  test("a post reached by client navigation still gets its cover", async function (assert) {
+    await visit("/");
+    await click(".post-list li:first-child h2 a");
+
+    assert.dom(".post-image picture").exists();
+  });
+
   test("a tag lists its posts", async function (assert) {
     await visit("/tag/reactivity");
 
@@ -65,11 +72,11 @@ module("Application | blog", function (hooks) {
   });
 
   test("unknown addresses show not found", async function (assert) {
-    await visit("/this-post-does-not-exist").catch(() => {});
+    await visit("/this-post-does-not-exist");
 
     assert.dom("main h1").hasText("Not found");
 
-    await visit("/a/deeper/address").catch(() => {});
+    await visit("/a/deeper/address");
 
     assert.dom("main h1").hasText("Not found");
   });

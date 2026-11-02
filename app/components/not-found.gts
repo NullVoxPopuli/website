@@ -2,9 +2,9 @@ import { LinkTo } from "@ember/routing";
 
 import { pageTitle } from "ember-page-title";
 
-<template>
+export const NotFound = <template>
   {{pageTitle "Not found"}}
 
   <h1>Not found</h1>
   <p>This strain went extinct. <LinkTo @route="index">See all posts</LinkTo>.</p>
-</template>
+</template>;

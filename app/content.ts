@@ -1,3 +1,5 @@
+import { getPromiseState } from "reactiveweb/get-promise-state";
+
 import type { ImageData } from "@responsive-image/core";
 
 export interface Post {
@@ -43,8 +45,8 @@ function byId<Item extends { id: string }>(modules: Record<string, Item>) {
 /**
  * Keys in a glob are paths, and the id is the file name.
  */
-function loadHtml(loaders: Loaders, dir: string, id: string) {
-  return loaders[`/${dir}/${id}.md`]?.() ?? "";
+async function loadHtml(loaders: Loaders, dir: string, id: string) {
+  return (await loaders[`/${dir}/${id}.md`]?.()) ?? "";
 }
 
 const postBodies = import.meta.glob("/content/*.md", { import: "default" }) as Loaders;
@@ -79,46 +81,65 @@ export const posts = Array.from(postsById.values()).sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 );
 
-export class NotFound extends Error {}
+export const findPost = (id: string) => postsById.get(id);
+export const findPage = (id: string) => pagesById.get(id);
+export const findTag = (id: string) => tagsById.get(id);
+export const findAuthor = (id: string) => authorsById.get(id);
 
-function find<Item>(items: Map<string, Item>, id: string) {
-  const item = items.get(id);
+export const postsTagged = (id: string) => posts.filter((post) => post.tags?.includes(id));
+export const postsBy = (id: string) => posts.filter((post) => post.authors?.includes(id));
 
-  if (!item) throw new NotFound(`Nothing at ${id}`);
+export const newerThan = (post: Post) => posts[posts.indexOf(post) - 1];
+export const olderThan = (post: Post) => posts[posts.indexOf(post) + 1];
 
-  return item;
-}
+/**
+ * getPromiseState needs the same promise each time, to return the same state.
+ */
+function once<Value>(load: (id: string) => Promise<Value>) {
+  const promises = new Map<string, Promise<Value>>();
 
-export const tagFor = (id: string) => tagsById.get(id);
-export const authorFor = (id: string) => authorsById.get(id);
+  return (id: string) => {
+    if (!promises.has(id)) promises.set(id, load(id));
 
-export async function loadPost(id: string) {
-  const post = find(postsById, id);
-  const index = posts.indexOf(post);
-
-  return {
-    post,
-    cover: await loadCover(post.image),
-    html: await loadHtml(postBodies, "content", id),
-    newer: posts[index - 1],
-    older: posts[index + 1],
+    return promises.get(id) as Promise<Value>;
   };
 }
 
-export async function loadPage(id: string) {
-  return { page: find(pagesById, id), html: await loadHtml(pageBodies, "page", id) };
+const loadPost = once(async (id) => ({
+  cover: await loadCover(findPost(id)?.image),
+  html: await loadHtml(postBodies, "content", id),
+}));
+
+const loadPage = once((id) => loadHtml(pageBodies, "page", id));
+
+export const postBody = (id: string) => getPromiseState(loadPost(id));
+export const pageBody = (id: string) => getPromiseState(loadPage(id));
+
+/**
+ * The first render must have the content, in the pre-render and in the browser.
+ *
+ * Glimmer can only rehydrate what the pre-render wrote in its first render.
+ *
+ * With a resolved promise, getPromiseState is sync.
+ */
+export async function preloadAll() {
+  for (const { id } of posts) await preload(`/${id}`);
+  for (const { id } of pagesById.values()) await preload(`/page/${id}`);
 }
 
-export function loadTag(id: string) {
-  return {
-    tag: find(tagsById, id),
-    posts: posts.filter((post) => post.tags?.includes(id)),
-  };
-}
+export function preload(pathname: string) {
+  const path = pathname.replace(/^\/|\/$/g, "");
+  const pageId = path.match(/^page\/(.+)$/)?.[1];
 
-export function loadAuthor(id: string) {
-  return {
-    author: find(authorsById, id),
-    posts: posts.filter((post) => post.authors?.includes(id)),
-  };
+  if (pageId) {
+    pageBody(pageId);
+
+    return loadPage(pageId);
+  }
+
+  if (!findPost(path)) return;
+
+  postBody(path);
+
+  return loadPost(path);
 }

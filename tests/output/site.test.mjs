@@ -17,6 +17,11 @@ test("each route has pre-rendered content", () => {
   }
 });
 
+test("posts and pages are pre-rendered with their body", () => {
+  assert.match(read("2024-04-24-signals/index.html"), /class="prose"[\s\S]*<pre class="shiki/);
+  assert.match(read("page/links/index.html"), /class="prose"[\s\S]*BlueSky/);
+});
+
 test("pre-rendered posts have a title and meta tags", () => {
   const html = read("2024-04-24-signals/index.html");
 
