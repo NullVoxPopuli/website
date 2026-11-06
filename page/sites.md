@@ -42,6 +42,10 @@ Renders tables present in linked markdown documents via the `?file=` query param
 
 Renders directed graphs, shows cycles, handles (very) large graphs -- used while exploring / debugging cycles in large monorepos
 
+## [replay, repeat](https://replay-repeat.nullvoxpopuli.com/?loop=1&loop_end=134.2&loop_start=77.6&speed=1.25&youtube_video_id=DSxqCKv28xo)
+
+Set loop markers on a video and change the playback speed for learning choreography
+
 ## [ember-inspector](https://ember-inspector.nullvoxpopuli.com/)
 
 Status of the latest release of ember-inspector.
