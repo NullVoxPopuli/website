@@ -28,7 +28,7 @@ importers:
         version: 2.4.0(@babel/core@7.29.7)
       ember-page-title:
         specifier: ^9.0.3
-        version: 9.0.3
+        version: 9.1.0
       ember-source:
         specifier: ~7.3.0
         version: 7.3.1(@glimmer/component@2.2.1)
@@ -2671,9 +2671,8 @@ packages:
   ember-modifier@4.3.0:
     resolution: {integrity: sha512-O0rirSLQbGg0VJ/NqoQ4uN1bh2iAekZC/Ykma+FkjCM2ofrO38u+d8n3+AK6uVWeMJmogGX2KL+Is5fofoInJg==}
 
-  ember-page-title@9.0.3:
-    resolution: {integrity: sha512-fedRHUsvq8tIZgOii8jTrfAyeq+la/9H5eAzhNNwEyzo7nDMmqK2SxsyBUGXprd8fOacsPabLlzlucMi/4mUpA==}
-    engines: {node: 16.* || >= 18}
+  ember-page-title@9.1.0:
+    resolution: {integrity: sha512-+zBVORfzjnF8eNZ2kesVAV9+LaqIOvFDRK102c7jhpgM1oi3kbKRVh33+fRmF3tOFnWXwxbSiRfOgHS4rpMw+Q==}
 
   ember-qunit@9.2.0:
     resolution: {integrity: sha512-y/v9D7/wfH9fWh6p6NPNZ4KMJ97ZdowoASNmLvLrrzDYSVHJDbbbOfFMKLfdvHF942PHMlf6NulKVezO4yNfmw==}
@@ -6547,7 +6546,7 @@ snapshots:
       eslint-import-resolver-typescript: 4.4.5(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(eslint@10.14.0))(eslint@10.14.0)
       eslint-plugin-decorator-position: 6.1.1(@babel/eslint-parser@8.0.7(@babel/core@7.29.7)(eslint@10.14.0))(eslint@10.14.0)
       eslint-plugin-ember: 13.9.1(@babel/eslint-parser@8.0.7(@babel/core@7.29.7)(eslint@10.14.0))(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(@typescript/typescript6@6.0.2)(eslint@10.14.0)
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(eslint-import-resolver-typescript@4.4.5(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(eslint@10.14.0))(eslint@10.14.0))(eslint@10.14.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(eslint-import-resolver-typescript@4.4.5)(eslint@10.14.0)
       eslint-plugin-json: 4.0.1
       eslint-plugin-n: 18.5.0(@typescript/typescript6@6.0.2)(eslint@10.14.0)
       eslint-plugin-simple-import-sort: 13.0.0(eslint@10.14.0)
@@ -7983,7 +7982,7 @@ snapshots:
     transitivePeerDependencies:
       - '@babel/core'
 
-  ember-page-title@9.0.3:
+  ember-page-title@9.1.0:
     dependencies:
       '@embroider/addon-shim': 1.11.0
       '@simple-dom/document': 1.4.0
@@ -8228,7 +8227,7 @@ snapshots:
       tinyglobby: 0.2.17
       unrs-resolver: 1.13.0
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(eslint-import-resolver-typescript@4.4.5(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(eslint@10.14.0))(eslint@10.14.0))(eslint@10.14.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(eslint-import-resolver-typescript@4.4.5)(eslint@10.14.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -8289,7 +8288,7 @@ snapshots:
       eslint: 10.14.0
       eslint-compat-utils: 0.5.1(eslint@10.14.0)
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(eslint-import-resolver-typescript@4.4.5(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(eslint@10.14.0))(eslint@10.14.0))(eslint@10.14.0):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.72.1(@typescript/typescript6@6.0.2)(eslint@10.14.0))(eslint-import-resolver-typescript@4.4.5)(eslint@10.14.0):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.2.0
